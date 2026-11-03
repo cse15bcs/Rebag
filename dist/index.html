@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f5ec"><meta name="description" content="Your old favourites have another story in them. Design a one-of-a-kind handbag from your own clothes with Rebag.">
+  <title>Rebag — Old clothes. New stories.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"><script src="app.js" defer></script>
+</head>
+<body>
+  <div class="announcement">GOOD CLOTHES DESERVE A PLOT TWIST. <span>LET’S MAKE YOURS A BAG. ↗</span></div>
+  <header class="header wrap">
+    <a class="logo" href="#" aria-label="Rebag home">rebag<span class="logo-star">✳</span><small>wear it again. differently.</small></a>
+    <nav aria-label="Main navigation"><a href="#collection">The bags</a><a href="#how-it-works">How it works</a><a href="#questions">A few FAQs</a></nav>
+    <button class="text-button saved-button" id="saved">My makes <span id="saved-count">0</span></button>
+    <button class="button small" data-start>Make it yours <span>↗</span></button>
+  </header>
+  <main>
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy"><div class="eyebrow"><span class="mini-star">✳</span> A LITTLE OLD. A WHOLE LOT YOU.</div>
+        <h1 id="hero-title">Old clothes.<br>New <span class="word-loop">bag energy.<svg viewBox="0 0 500 90" aria-hidden="true"><path d="M8 65 Q250 98 490 52 M15 74 Q245 106 475 65"/></svg></span></h1>
+        <p>That favourite shirt. Those forgotten jeans.<br>Let’s turn your “can’t throw it away” into your<br class="desktop"> “can’t leave home without it.”</p>
+        <div class="hero-actions"><button class="button" data-start>Give my clothes a new life <span>↗</span></button><a href="#collection" class="under-link">Meet the bags ↓</a></div>
+        <div class="hero-note"><span class="tiny-bag">♧</span> Your clothes + a little making fee = one very you bag.</div>
+      </div>
+      <div class="hero-art" aria-label="Illustrations of a denim tote and a pink patchwork handbag made from old clothes">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="art-doodle doodle-one">✳</span><span class="art-doodle doodle-two">✧</span>
+        <div class="garment-note">your old jeans <svg viewBox="0 0 120 80" aria-hidden="true"><path d="M5 5q110 5 75 60m0 0-5-22m5 22 21-10"/></svg></div>
+        <div class="hero-bag primary-bag" id="hero-bag-one"></div><div class="hero-bag secondary-bag" id="hero-bag-two"></div>
+        <div class="round-sticker">ONE OF<br><strong>A KIND.</strong><span>JUST LIKE YOU</span></div>
+        <div class="fabric-tag"><span>♥</span> made from memories</div><div class="bag-caption">same soul. new silhouette. ↗</div>
+      </div>
+    </section>
+    <div class="ticker" aria-hidden="true"><div>GOOD THINGS COME AROUND <b>✳</b> LESS WASTE, MORE TASTE <b>✳</b> YOUR CLOTHES, REIMAGINED <b>✳</b> GOOD THINGS COME AROUND <b>✳</b></div></div>
+    <section class="collection wrap section" id="collection" aria-labelledby="collection-title">
+      <div class="section-heading"><div><div class="eyebrow">A NEW CHAPTER FOR YOUR CLOSET</div><h2 id="collection-title">Pick your next plus-one.</h2></div><p>Start with a shape you love.<br>Add the clothes you can’t part with.</p></div>
+      <div class="filters" role="group" aria-label="Filter bags"><button class="chip active" aria-pressed="true" data-filter="all">All the good stuff</button><button class="chip" aria-pressed="false" data-filter="everyday">Everyday totes</button><button class="chip" aria-pressed="false" data-filter="mini">Little bags</button><button class="chip" aria-pressed="false" data-filter="shoulder">Shoulder bags</button></div>
+      <div class="product-grid" id="products"></div>
+      <p class="price-note">A little price context: these are sample making fees for the prototype. Final pricing follows a fabric and design check.</p>
+    </section>
+    <section class="how-section" id="how-it-works" aria-labelledby="how-title"><div class="wrap section">
+      <div class="section-heading"><div><div class="eyebrow">FROM CLOSET TO CARRY-ON</div><h2 id="how-title">A glow-up in three acts.</h2></div><span class="handwritten">a good kind of baggage ↴</span></div>
+      <div class="steps-grid"><article><span class="step-number">01 / THE OLD FAVOURITE</span><div class="step-icon">♧<span>♥</span></div><h3>Raid your own closet.</h3><p>Pick clean, untorn clothes you’re ready to reimagine. Denim, cotton and sturdy fabrics are a lovely start.</p></article><article><span class="step-number">02 / THE MAIN CHARACTER</span><div class="step-icon scissors">✂</div><h3>Make it a little you.</h3><p>Choose a bag shape, play with colours and details, or tell us your own idea. Share a photo of your fabric.</p></article><article><span class="step-number">03 / THE NEXT CHAPTER</span><div class="step-icon">♧<span>✳</span></div><h3>Meet your new favourite.</h3><p>In the planned service, we check the fabric, confirm the quote and handover, then make and send your bag.</p></article></div>
+      <div class="condition-strip"><span>✳</span><div><strong>Old is lovely. Torn is tricky.</strong><p>Your clothes need to be washed, dry, and free of tears or weak patches. Every fabric gets a suitability check.</p></div><a href="#questions">The fabric lowdown ↗</a></div>
+    </div></section>
+    <section class="custom-banner wrap"><div><div class="eyebrow">GOT A “WHAT IF…” IN MIND?</div><h2>We like your kind of weird.</h2><p>More pockets? A patchwork moment? Your initials?<br>Bring the idea. We’ll help you stitch it together.</p><button class="button light" data-start>Let’s make something you <span>↗</span></button></div><div class="banner-art" id="banner-bag" aria-hidden="true"></div><span class="banner-star" aria-hidden="true">✳</span></section>
+    <section class="faq wrap section" id="questions"><div><div class="eyebrow">BEFORE YOU EMPTY YOUR CLOSET</div><h2>A few loose threads.</h2><p>New idea. Fair questions.</p></div><div class="faq-list">
+      <details><summary>Can I use my own clothes?</summary><p>That’s the whole idea! Your bag is intended to use your own approved clothes. Colours and patterns depend on the material you send. Choose an existing design as a starting point or describe your own.</p></details>
+      <details><summary>Which clothes are suitable?</summary><p>Start with clean, dry, untorn denim, cotton or another sturdy woven fabric. Avoid mould, heavy stains, brittle fabric and very stretchy or delicate materials. Photos help, but a maker must inspect the fabric before confirming suitability and how much is needed.</p></details>
+      <details><summary>How do I hand over the clothes?</summary><p>Pickup and drop-off are planned options, subject to the launch location and availability. This prototype does not arrange a courier or collect an address. You can select a preference in your sample request.</p></details>
+      <details><summary>What am I paying for?</summary><p>The planned making fee covers work such as cutting, stitching, lining and standard hardware. Custom work and delivery may cost extra. All prices here are illustrative; a final quote needs your approval before any payment or cutting.</p></details>
+      <details><summary>Can I actually order a bag here yet?</summary><p>This is an interactive concept prototype. You can customize a design and save or download a sample request on this device. Nothing is sent to a maker, no payment is taken, and no pickup or delivery is booked.</p></details>
+    </div></section>
+  </main>
+  <footer><div class="wrap footer-top"><a class="logo" href="#">rebag<span>✳</span><small>wear it again. differently.</small></a><p>Less sitting in a closet.<br>More going places.</p><a href="#collection">Find your next bag ↗</a></div><div class="wrap footer-bottom"><span>Made for a second chance. And a third.</span><span>Concept prototype · No live orders or payments</span></div></footer>
+  <dialog id="studio" aria-labelledby="studio-title"><div class="modal-head"><div><span class="eyebrow">THE REBAG STUDIO</span><h2 id="studio-title">Let’s make it yours.</h2></div><button class="icon-button" data-close="studio" aria-label="Close design studio">×</button></div>
+    <div class="studio-progress" aria-label="Design progress"><span class="current">1. Design</span><span>2. Your clothes</span><span>3. Review</span></div>
+    <div class="studio-layout"><aside class="preview-panel"><div id="live-bag"></div><span class="preview-label">Your little work in progress</span><p id="preview-summary"></p><small>Illustrative preview. Actual texture and colour depend on your clothes.</small></aside><form id="design-form">
+      <div class="form-step" data-step="0"><h3>Your bag, your rules.</h3><label for="bag-shape">Start with a shape</label><select id="bag-shape" name="shape"></select><fieldset><legend>Pick a colour mood</legend><div class="swatches" id="swatches"></div></fieldset><label for="fabric-pattern">Give it some personality</label><select id="fabric-pattern" name="pattern"><option value="plain">Keep it simple</option><option value="patch">Patchwork party</option><option value="stripe">A stripe situation</option></select><label for="strap">The finishing touch</label><select id="strap" name="strap"><option value="matching">Matching fabric handles · included</option><option value="contrast">Contrast handles · + ₹80</option><option value="long">Long shoulder strap · + ₹120</option></select><label for="initials">Your initials <span>(optional · up to 3 letters)</span></label><input id="initials" name="initials" maxlength="3" placeholder="e.g. TS" pattern="[A-Za-z]{0,3}" autocomplete="off"><label for="design-notes">A little extra you <span>(optional)</span></label><textarea id="design-notes" name="notes" rows="2" maxlength="500" placeholder="A pocket for my book, a little heart patch…"></textarea></div>
+      <div class="form-step" data-step="1" hidden><h3>Meet the old favourites.</h3><label for="material">What are we working with?</label><select id="material" name="material"><option value="denim">Denim / jeans</option><option value="cotton">Cotton / shirts</option><option value="mixed">A mix of sturdy fabrics</option><option value="other">Something else — needs a maker’s review</option></select><label for="garments">How many garments can you offer?</label><input type="number" id="garments" name="garments" min="1" max="20" value="2" required><small class="field-help">A starting estimate only. The maker will confirm the amount needed.</small><label for="cloth-photo">Show us your fabric <span>(optional)</span></label><input type="file" id="cloth-photo" accept="image/jpeg,image/png,image/webp"><small class="field-help">JPG, PNG or WebP, up to 5 MB. Previewed locally; never uploaded.</small><p id="photo-status" role="status"></p><img id="photo-preview" alt="Your selected garment photo" hidden><label class="check-label"><input type="checkbox" id="condition" required><span>My clothes are washed, dry and untorn, with no weak or damaged patches.</span></label><label for="handover">How would you prefer to hand them over?</label><select id="handover" name="handover"><option>Decide after fabric approval</option><option>Pickup, if available in my area</option><option>Drop-off, if a location is available</option></select><div class="form-notice">Photos are a first look. Fabric suitability, your design and the final quote need approval before any clothes are cut.</div></div>
+      <div class="form-step" data-step="2" hidden><h3>A fresh start looks good.</h3><div id="review-content"></div><div class="quote-breakdown" id="quote"></div><div class="form-notice"><strong>This is a sample request.</strong> It stays in this browser. No maker is contacted, no collection is booked and no payment is taken.</div><label class="check-label"><input type="checkbox" id="demo-consent" required><span>I understand this saves a demo request only.</span></label></div>
+      <p id="form-error" role="alert"></p><div class="studio-bottom"><div><small>Illustrative making fee</small><strong id="estimate"></strong></div><div><button type="button" id="back" class="button secondary" hidden>Back</button><button type="button" id="next" class="button">Your clothes →</button></div></div>
+    </form></div>
+  </dialog>
+  <dialog id="makes" aria-labelledby="makes-title"><div class="modal-head"><div><span class="eyebrow">SAVED ON THIS DEVICE</span><h2 id="makes-title">Your next chapters.</h2></div><button class="icon-button" data-close="makes" aria-label="Close saved makes">×</button></div><div id="makes-list"></div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
