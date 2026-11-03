@@ -1,0 +1,15 @@
+import {readFileSync} from 'node:fs';
+import {runInNewContext} from 'node:vm';
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+const sandbox={};runInNewContext(readFileSync(new URL('./dist/rewards.js',import.meta.url),'utf8'),sandbox);
+const R=sandbox.RebagRewards,now='2026-11-03T10:00:00Z';
+const make=(id,subtotal=499)=>({id,subtotal,created:now});
+const garments=[{name:'Blue jeans',material:'denim'},{name:'Cotton shirt',material:'cotton'}];
+const order=(s,id,points=0)=>R.checkout(s,{make:make(id),garments,points,now});
+test('new garments earn pending points, unavailable in their own checkout',()=>{const s=R.empty();assert.throws(()=>order(s,'one',50),/balance/);assert.equal(s.makes.length,0);order(s,'one');assert.equal(R.wallet(s).pending,100);assert.equal(R.wallet(s).available,0);});
+test('acceptance credits each garment once; rejection earns nothing',()=>{const s=R.empty();order(s,'one');R.review(s,'one-G1','accepted',now);assert.equal(R.wallet(s).available,50);assert.equal(R.wallet(s).pending,50);assert.throws(()=>R.review(s,'one-G1','accepted',now),/already/);R.review(s,'one-G2','rejected',now);assert.equal(R.wallet(s).available,50);assert.equal(R.wallet(s).pending,0);assert.equal(s.ledger.length,1);});
+test('next checkout deducts points atomically and preserves unused balance',()=>{const s=R.empty();order(s,'one');R.review(s,'one-G1','accepted',now);R.review(s,'one-G2','accepted',now);order(s,'two',70);assert.equal(R.wallet(s).available,30);assert.equal(s.makes[0].total,429);assert.equal(R.wallet(s).redeemed,70);assert.equal(R.wallet(s).pending,100);assert.throws(()=>order(s,'three',31),/balance/);assert.equal(s.makes.length,2);});
+test('25 percent cap rounds down; invalid amounts and duplicate orders fail',()=>{const s=R.empty();for(let i=0;i<3;i++){order(s,'earn'+i);R.review(s,`earn${i}-G1`,'accepted',now);R.review(s,`earn${i}-G2`,'accepted',now);}assert.equal(R.limit(s,499),124);for(const points of [-1,1.5,NaN,125]) assert.throws(()=>order(s,'invalid',points));order(s,'next',124);assert.equal(s.makes[0].total,375);assert.throws(()=>order(s,'next'),/already/);});
+test('archiving does not erase rewards history; reload preserves balances',()=>{const s=R.empty();order(s,'one');R.review(s,'one-G1','accepted',now);order(s,'two',50);s.makes.forEach(m=>m.archived=true);const loaded=R.parse(JSON.stringify(s));assert.equal(R.wallet(loaded).available,0);assert.equal(R.wallet(loaded).redeemed,50);assert.equal(R.wallet(loaded).earned,50);});
+test('legacy makes migrate without invented credits; corrupt state is rejected',()=>{const legacy=[make('old')];const s=R.parse(null,legacy);assert.equal(s.makes[0].id,'old');assert.equal(R.wallet(s).available,0);assert.throws(()=>R.parse('{broken'));assert.throws(()=>R.parse('{"version":2,"makes":[],"garments":[],"ledger":[{"points":-100,"type":"credit"}]}'));});
