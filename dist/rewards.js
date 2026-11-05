@@ -22,7 +22,8 @@ globalThis.RebagRewards = (() => {
     if(!Number.isSafeInteger(points)||points<0||points>limit(state,make.subtotal)) throw Error('Your points balance or checkout limit changed. Review the total and try again.');
     if(!Number.isInteger(garments.length)||garments.length<1||garments.length>20) throw Error('Add between 1 and 20 garments.');
     state.makes.unshift({...make,pointsRedeemed:points,total:make.subtotal-points*policy.rupeesPerPoint});
-    garments.forEach((g,i)=>state.garments.push({id:`${make.id}-G${i+1}`,orderId:make.id,name:g.name,material:g.material,status:'pending',points:policy.pointsPerGarment,created:now}));
+    const ownFabric=make.route==='own-fabric';
+    garments.forEach((g,i)=>state.garments.push({id:`${make.id}-G${i+1}`,orderId:make.id,name:g.name,material:g.material,purpose:ownFabric?'bag-fabric':'contribution',status:'pending',points:ownFabric?0:policy.pointsPerGarment,created:now}));
     if(points) state.ledger.push({id:`spend:${make.id}`,type:'debit',orderId:make.id,points,created:now,label:'Redeemed at checkout'});
   }
   function review(state,id,decision,now) {
@@ -31,7 +32,7 @@ globalThis.RebagRewards = (() => {
     if(garment.status!=='pending') throw Error('This garment has already been reviewed. Points cannot be awarded twice.');
     if(!['accepted','rejected'].includes(decision)) throw Error('Choose an acceptance decision.');
     garment.status=decision;garment.reviewed=now;
-    if(decision==='accepted') {
+    if(decision==='accepted' && garment.points>0) {
       if(state.ledger.some(e=>e.id===`earn:${id}`)) throw Error('Points were already issued for this garment.');
       state.ledger.push({id:`earn:${id}`,type:'credit',garmentId:id,orderId:garment.orderId,points:garment.points,created:now,label:garment.name});
     }

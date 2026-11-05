@@ -1,0 +1,11 @@
+import {readFileSync} from 'node:fs';
+import {runInNewContext} from 'node:vm';
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+const sandbox={URL};runInNewContext(readFileSync(new URL('./dist/design.js',import.meta.url),'utf8'),sandbox);
+const D=sandbox.RebagDesign;
+const make={id:'RB-test',route:'own-fabric',shape:'tote',bagName:'The Everyday Tote',serviceArea:'Delhi',colour:'denim',pattern:'patch',strap:'matching',initials:'TS',preservation:'Keep the original buttons',notes:'Pocket for a book',subtotal:599,total:549,pointsRedeemed:50,fabricUse:'preserved panel',hasPhoto:true};
+test('own-fabric brief preserves choices and explains colour, photo and cutting boundaries',()=>{const b=D.brief(make,[{id:'G1',name:'Dad’s shirt',material:'cotton',purpose:'bag-fabric',status:'pending',points:0}]);const text=D.text(b);for(const value of ['Dad’s shirt','Keep the original buttons','The Everyday Tote','Delhi','preserved panel','INR 549','not saved','no permission to cut']) assert.ok(text.includes(value),value);assert.equal(b.fabricSource,'Your approved fabric');assert.match(b.colourNote,/actual colour|Actual colour/);});
+test('contribution brief distinguishes Rebag material from offered garments and later rewards',()=>{const b=D.brief({...make,route:'contribution',fabricUse:null,preservation:'',rebagMaterial:'sturdy cotton'});assert.match(b.route,/Contribute/);assert.match(b.fabricSource,/Rebag materials/);assert.match(D.text(b),/sturdy cotton/);assert.match(b.rewardTiming,/later order/);assert.equal(b.preserve,'');});
+test('legacy designs can still be exported without a route or area',()=>{const b=D.brief({id:'old',shape:'bucket',colour:'sage',pattern:'plain',strap:'matching',total:549});assert.equal(b.route,'Earlier demo design');assert.equal(b.serviceArea,'Not recorded');assert.ok(D.text(b).includes('INR 549'));});
+test('contact stays unavailable without a real safe Instagram profile',()=>{for(const url of [null,'','not ready','javascript:alert(1)','https://instagram.com/','https://evil.example/rebag','https://instagram.com.evil.example/rebag','https://user:password@instagram.com/rebag','https://instagram.com/rebag?token=test','https://instagram.com/rebag#x'])assert.equal(D.instagramURL(url),null);assert.equal(D.instagramURL('https://www.instagram.com/rebag_test/'),'https://www.instagram.com/rebag_test/');});
