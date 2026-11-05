@@ -16,12 +16,13 @@ globalThis.RebagRewards = (() => {
     const pending=state.garments.filter(g=>g.status==='pending').reduce((n,g)=>n+g.points,0);
     return {earned,redeemed,pending,available:Math.max(0,earned-redeemed)};
   }
-  function limit(state,subtotal) { return Math.min(wallet(state).available,Math.floor(subtotal*policy.maxPercent/100/policy.rupeesPerPoint)); }
+  function limit(state,subtotal) { return Number.isFinite(subtotal)?Math.min(wallet(state).available,Math.floor(subtotal*policy.maxPercent/100/policy.rupeesPerPoint)):0; }
   function checkout(state,{make,garments,points=0,now}) {
     if(state.makes.some(m=>m.id===make.id)) throw Error('This request is already saved.');
+    if(make.quoteRequired&&points!==0)throw Error('A maker quote is required before redeeming points.');
     if(!Number.isSafeInteger(points)||points<0||points>limit(state,make.subtotal)) throw Error('Your points balance or checkout limit changed. Review the total and try again.');
     if(!Number.isInteger(garments.length)||garments.length<1||garments.length>20) throw Error('Add between 1 and 20 garments.');
-    state.makes.unshift({...make,pointsRedeemed:points,total:make.subtotal-points*policy.rupeesPerPoint});
+    state.makes.unshift({...make,pointsRedeemed:points,total:make.quoteRequired?null:make.subtotal-points*policy.rupeesPerPoint});
     const ownFabric=make.route==='own-fabric';
     garments.forEach((g,i)=>state.garments.push({id:`${make.id}-G${i+1}`,orderId:make.id,name:g.name,material:g.material,purpose:ownFabric?'bag-fabric':'contribution',status:'pending',points:ownFabric?0:policy.pointsPerGarment,created:now}));
     if(points) state.ledger.push({id:`spend:${make.id}`,type:'debit',orderId:make.id,points,created:now,label:'Redeemed at checkout'});

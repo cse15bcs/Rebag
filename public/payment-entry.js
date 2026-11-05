@@ -3,6 +3,7 @@
 (()=>{
  const makes=document.querySelector('#makes-list');if(!makes)return;
  const decorate=()=>{for(const actions of makes.querySelectorAll('.saved-actions')){
+  if(actions.closest('[data-quote-required="true"]'))continue;
   if(actions.querySelector('[data-payment-test]'))continue;
   const reference=actions.querySelector('[data-download]')?.dataset.download||actions.querySelector('[data-remove]')?.dataset.remove;
   if(!reference)continue;

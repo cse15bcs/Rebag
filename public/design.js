@@ -11,11 +11,11 @@ globalThis.RebagDesign = (() => {
   route:routeName(make.route),shape:make.bagName||make.shape,serviceArea:make.serviceArea||'Not recorded',
   fabricSource:routes[make.route]?.source||'See earlier design',
   materialPreference:make.rebagMaterial||null,fabricUse:make.fabricUse||null,
-  colourPreference:make.colour,colourNote:make.route==='own-fabric'?'Actual colour and pattern follow your cloth; this preview does not promise dyeing.':'Colour and material preferences need availability confirmation.',
-  layout:make.pattern,handles:make.strap,initials:make.initials||'',
+  colourPreference:make.quoteRequired?'See reference photo':make.colour,colourNote:make.route==='own-fabric'?'Actual colour and pattern follow your cloth; this preview does not promise dyeing.':'Colour and material preferences need availability confirmation.',
+  layout:make.quoteRequired?'Reviewed photo outline and detail lines':make.pattern,handles:make.quoteRequired?'See reference and requested changes':make.strap,initials:make.initials||'',
   preserve:make.preservation||'',designNotes:make.notes||'',handoverPreference:make.handover||'Decide after review',
   garments:garments.map(g=>({reference:g.id,name:g.name,material:g.material,purpose:g.purpose||'contribution',status:g.status,possiblePoints:g.points})),
-  samplePricing:{currency:'INR',subtotal:make.subtotal??make.total,pointsRedeemed:make.pointsRedeemed||0,totalAfterPoints:make.total,delivery:'Not quoted',note:'Illustrative estimate only; fabric, design and final quote need approval.'},
+  samplePricing:{quoteRequired:make.quoteRequired===true,currency:'INR',subtotal:make.subtotal??make.total,pointsRedeemed:make.pointsRedeemed||0,totalAfterPoints:make.total,delivery:'Not quoted',note:'Illustrative estimate only; fabric, design and final quote need approval.'},
   blueprint:make.blueprint||null,designApproval:make.designApproval||null,
   rewardTransactions:transactions,rewardTiming:'Accepted contributions earn points for a later order. Pending/rejected garments cannot fund this design.',
   photo:make.hasPhoto?'Previewed locally; photo is not saved in this brief. Attach it separately if you choose.':'No photo added',
@@ -29,10 +29,11 @@ globalThis.RebagDesign = (() => {
   ...(b.fabricUse?[`My fabric will be used as: ${b.fabricUse}`]:[]),
   `Colour preference: ${b.colourPreference}`,b.colourNote,`Layout: ${b.layout}`,`Handles: ${b.handles}`,`Initials: ${b.initials||'None'}`,
   '',`Please preserve: ${b.preserve||'To discuss'}`,`Design notes: ${b.designNotes||'None'}`,`Handover: ${b.handoverPreference}`,
-  ...(b.blueprint?['',`Design starting point: ${b.blueprint.source}`,`Requested width / height / depth: ${b.blueprint.dimensions.width} / ${b.blueprint.dimensions.height} / ${b.blueprint.dimensions.depth} cm`,`Handle drop: ${b.blueprint.dimensions.strapDrop} cm`,`Outside pocket: ${b.blueprint.externalPocket?'Yes':'No'}`,`Reference notes: ${b.blueprint.referenceNotes||'None'}`]:[]),
+  ...(b.blueprint?['',`Design starting point: ${b.blueprint.source}`,`Requested width / height / depth: ${b.blueprint.dimensions.width} / ${b.blueprint.dimensions.height} / ${b.blueprint.dimensions.depth} cm`,`Handle drop: ${b.blueprint.dimensions.strapDrop} cm`,`Outside pocket: ${b.blueprint.source==='reference'?'See reference and detail lines':b.blueprint.externalPocket?'Yes':'No'}`,`Reference notes: ${b.blueprint.referenceNotes||'None'}`]:[]),
+  ...(b.blueprint?.referenceOutline?[`Outline method: ${b.blueprint.referenceOutline.method}`,`Reviewed photo SHA-256: ${b.blueprint.referenceOutline.sourceHash}`,`Photo proportions: ${b.blueprint.referenceOutline.proportionsLocked?'Kept':'Adjusted'}`]:[]),
   ...(b.designApproval?['',`Site design approval: ${b.designApproval.id} / version ${b.designApproval.version}`,`Status: ${b.designApproval.status}`]:[]),
   '', 'GARMENTS',...b.garments.map(g=>`${g.name} | ${g.material} | ${g.purpose} | ${g.status} | ${g.possiblePoints} possible demo points`),
-  '',`Illustrative making subtotal: INR ${b.samplePricing.subtotal}`,`Demo points redeemed from earlier contributions: ${b.samplePricing.pointsRedeemed}`,`Illustrative total after demo points: INR ${b.samplePricing.totalAfterPoints}`,'Delivery: not quoted',b.samplePricing.note,
+  '',...(b.samplePricing.quoteRequired?['Custom design: maker quote required. No making price or points discount confirmed.']:[`Illustrative making subtotal: INR ${b.samplePricing.subtotal}`,`Demo points redeemed from earlier contributions: ${b.samplePricing.pointsRedeemed}`,`Illustrative total after demo points: INR ${b.samplePricing.totalAfterPoints}`]),'Delivery: not quoted',b.samplePricing.note,
   '',b.rewardTiming,b.photo,'',b.nextStep,b.notice
  ].join('\n');}
  return Object.freeze({routes,routeName,instagramURL,brief,text});

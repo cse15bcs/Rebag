@@ -1,5 +1,5 @@
 import {normalizeDesign,canonical,digest,APPROVAL_TEXT_VERSION,APPROVAL_TEXT} from '../public/blueprint-core.mjs';
-const MAX_IMAGE=5*1024*1024,MAX_BODY=MAX_IMAGE*2+65536;
+const MAX_IMAGE=5*1024*1024,MAX_BODY=MAX_IMAGE*2+131072;
 class Problem extends Error{constructor(message,status=400){super(message);this.status=status;}}
 const json=(data,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});
 const uuid=v=>typeof v==='string'&&/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i.test(v);
@@ -37,10 +37,11 @@ export function createDesignApprovalService({db,bucket,now=()=>new Date().toISOS
    const raw=await limitedBody(request),form=await new Response(raw,{headers:{'Content-Type':request.headers.get('content-type')}}).formData();
    const draftId=form.get('draftId'),requestKey=form.get('requestKey');if(!uuid(draftId)||!uuid(requestKey))throw new Problem('Invalid design reference.');
    if(form.get('approved')!=='true'||form.get('approvalTextVersion')!==APPROVAL_TEXT_VERSION)throw new Problem('Read and approve the current design statement before sending.');
-   const encoded=form.get('design');if(typeof encoded!=='string'||encoded.length>32768)throw new Problem('Design specification is too large.');
+   const encoded=form.get('design');if(typeof encoded!=='string'||encoded.length>65536)throw new Problem('Design specification is too large.');
    let design;try{design=normalizeDesign(JSON.parse(encoded));}catch(error){throw new Problem(error.message||'Invalid design.');}
    const reference=await readImage(form.get('reference'),'Reference photo'),fabric=await readImage(form.get('fabric'),'Fabric photo');
    if(design.source==='reference'&&!reference)throw new Problem('Add a reference photo, or start from a shape.');
+   if(design.source==='reference'&&design.referenceOutline.sourceHash!==reference.hash)throw new Problem('This outline belongs to a different photo. Extract and review the current reference again.');
    const designHash=await digest(canonical(design)),fingerprint=await digest(canonical({design,referenceHash:reference?.hash||null,fabricHash:fabric?.hash||null}));
    const existing=await find(user.userId,requestKey);if(existing){if(existing.fingerprint!==fingerprint)return json({error:'This approval reference belongs to another design version. Review and submit the changed design as a new version.'},409);return json(receipt(existing));}
    const count=await db.prepare('SELECT COUNT(*) AS total FROM design_approvals WHERE owner_id = ? AND created_at >= ?').bind(user.userId,now().slice(0,10)+'T00:00:00.000Z').first();if(count.total>=30)throw new Problem('You have reached today’s design submission limit. Please try again tomorrow.',429);

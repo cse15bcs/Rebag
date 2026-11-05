@@ -1,0 +1,48 @@
+import {extractOutline,outlineBounds,validateOutline} from './reference-outline.mjs';
+const $=s=>document.querySelector(s),round=n=>Math.round(n*10)/10;
+export class ReferenceEditor{
+ constructor(onChange){
+  this.onChange=onChange;this.svg=$('#reference-trace-editor');this.mode='edit';this.points=[];this.selected=null;this.region={left:0,top:0,right:1000,bottom:1000};
+  for(const [id,mode] of [['ref-trace-outer','outer'],['ref-trace-hole','hole'],['ref-trace-detail','detail'],['ref-crop','crop'],['ref-edit','edit']])$( '#'+id).addEventListener('click',()=>this.setMode(mode));
+  $('#reference-outline-auto').addEventListener('click',()=>this.analyse());$('#ref-reset-crop').addEventListener('click',()=>{this.region={left:0,top:0,right:1000,bottom:1000};this.analyse();});
+  $('#reference-threshold').addEventListener('change',()=>this.analyse());$('#ref-finish').addEventListener('click',()=>this.finish());$('#ref-remove').addEventListener('click',()=>this.remove());
+  this.svg.addEventListener('pointerdown',e=>this.down(e));this.svg.addEventListener('pointermove',e=>this.move(e));this.svg.addEventListener('pointerup',e=>this.up(e));this.svg.addEventListener('pointercancel',()=>{this.drag=null;});
+  this.svg.addEventListener('keydown',e=>this.key(e));window.addEventListener('resize',()=>this.render());
+ }
+ clear(){this.image=null;this.outline=null;this.points=[];this.selected=null;this.svg.innerHTML='';$('#reference-outline-reviewed').checked=false;$('#reference-outline-reviewed').disabled=true;$('#reference-outline-status').textContent='Add a photo to extract or trace its bag outline.';}
+ load(image,url,sourceHash){this.image=image;this.url=url;this.sourceHash=sourceHash;this.imageAspect=image.naturalWidth/image.naturalHeight;this.region={left:0,top:0,right:1000,bottom:1000};this.analyse();}
+ emit(){ $('#reference-outline-reviewed').checked=false;$('#reference-outline-reviewed').disabled=!this.outline;this.onChange(this.outline);this.render(); }
+ analyse(){
+  if(!this.image)return;this.points=[];this.selected=null;this.mode='edit';
+  try{const r=this.region,iw=this.image.naturalWidth,ih=this.image.naturalHeight,sw=iw*(r.right-r.left)/1000,sh=ih*(r.bottom-r.top)/1000,scale=Math.min(1,256/Math.max(sw,sh)),canvas=document.createElement('canvas');canvas.width=Math.max(2,Math.round(sw*scale));canvas.height=Math.max(2,Math.round(sh*scale));const ctx=canvas.getContext('2d',{willReadFrequently:true});ctx.drawImage(this.image,iw*r.left/1000,ih*r.top/1000,sw,sh,0,0,canvas.width,canvas.height);this.outline=extractOutline(ctx.getImageData(0,0,canvas.width,canvas.height).data,canvas.width,canvas.height,{threshold:Number($('#reference-threshold').value),imageAspect:this.imageAspect,region:r,sourceHash:this.sourceHash});$('#reference-outline-status').textContent=this.outline.warning||'Draft outline extracted from this photo. Check the bag boundary and handle openings; crop or adjust points as needed.';}
+  catch(error){this.outline=null;$('#reference-outline-status').textContent=error.message;}
+  this.emit();
+ }
+ geometry(){return this.outline?{...this.outline,reviewed:$('#reference-outline-reviewed').checked,proportionsLocked:$('#reference-lock-proportions').checked}:null;}
+ setMode(mode){if(!this.image)return;this.mode=mode;this.points=[];this.drag=null;this.selected=null;$('#reference-outline-status').textContent={crop:'Drag a rectangle around the bag, leaving a little background around it.',outer:'Click around the outside of the bag and handles, then Finish trace. This replaces the current outline.',hole:'Click around an opening inside the handle, then Finish trace.',detail:'Click along a seam, pocket or design detail, then Finish trace.',edit:'Drag a point to correct the outline. Focus a point and use arrow keys for fine adjustment.'}[mode];this.render();}
+ position(e){const r=this.svg.getBoundingClientRect();return [round(Math.max(0,Math.min(1000,(e.clientX-r.left)/r.width*1000))),round(Math.max(0,Math.min(1000,(e.clientY-r.top)/r.height*1000)))];}
+ down(e){if(!this.image)return;const at=this.position(e),point=e.target.closest('[data-point]');
+  if(this.mode==='crop'){this.drag={start:at,end:at};this.svg.setPointerCapture(e.pointerId);e.preventDefault();}
+  else if(this.mode==='edit'&&point){const [path,index]=point.dataset.point.split(':').map(Number);this.selected={path,index};this.drag={path,index};this.svg.setPointerCapture(e.pointerId);e.preventDefault();this.render();}
+ }
+ move(e){if(!this.drag)return;const at=this.position(e);if(this.mode==='crop'){this.drag.end=at;this.render();}else if(this.drag.path!==undefined){this.outline.paths[this.drag.path].points[this.drag.index]=at;this.outline.method='edited';$('#reference-outline-reviewed').checked=false;this.onChange(this.outline);this.render();}e.preventDefault();}
+ up(e){if(this.mode==='crop'&&this.drag){const {start,end}=this.drag;this.drag=null;if(Math.abs(start[0]-end[0])<80||Math.abs(start[1]-end[1])<80){$('#reference-outline-status').textContent='Choose a crop at least 8% of the photo in each direction.';return;}this.region={left:Math.min(start[0],end[0]),top:Math.min(start[1],end[1]),right:Math.max(start[0],end[0]),bottom:Math.max(start[1],end[1])};this.analyse();}
+  else if(this.mode==='edit'&&this.drag){this.drag=null;this.emit();}
+  else if(['outer','hole','detail'].includes(this.mode)){this.points.push(this.position(e));this.render();}
+ }
+ finish(){const minimum=this.mode==='detail'?2:3;if(!['outer','hole','detail'].includes(this.mode)||this.points.length<minimum){$('#reference-outline-status').textContent=`Add at least ${minimum} points before finishing.`;return;}
+  const path={kind:this.mode,points:this.points.map(p=>[...p])};if(this.mode==='outer')this.outline={version:1,paths:[path],imageAspect:this.imageAspect,sourceHash:this.sourceHash,method:'manual-trace',reviewed:false};else if(this.outline){if(this.outline.paths.length>=12){$('#reference-outline-status').textContent='Use at most 12 outline/detail paths.';return;}this.outline.paths.push(path);this.outline.method='edited';}else{ $('#reference-outline-status').textContent='Trace the outside of the bag first.';return;}
+  this.points=[];this.mode='edit';$('#reference-outline-status').textContent='Trace updated. Check that it matches the bag, then confirm the outline.';this.emit();
+ }
+ remove(){if(!this.selected||!this.outline)return;const p=this.outline.paths[this.selected.path];if(p.points.length>(p.kind==='detail'?2:3))p.points.splice(this.selected.index,1);else if(p.kind!=='outer')this.outline.paths.splice(this.selected.path,1);else{$('#reference-outline-status').textContent='The bag boundary needs at least three points.';return;}this.selected=null;this.outline.method='edited';this.emit();}
+ key(e){const point=e.target.closest('[data-point]');if(!point||!this.outline)return;const [path,index]=point.dataset.point.split(':').map(Number);this.selected={path,index};if(e.key==='Delete'||e.key==='Backspace'){e.preventDefault();this.remove();return;}const shift={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]}[e.key];if(!shift)return;e.preventDefault();const p=this.outline.paths[path].points[index],amount=e.shiftKey?10:1;this.outline.paths[path].points[index]=[Math.max(0,Math.min(1000,p[0]+shift[0]*amount)),Math.max(0,Math.min(1000,p[1]+shift[1]*amount))];this.outline.method='edited';this.emit();this.svg.querySelector(`[data-point="${path}:${index}"]`)?.focus();}
+ render(){if(!this.image)return;const available=this.svg.parentElement.clientWidth||400,w=Math.min(available,420*this.imageAspect),h=w/this.imageAspect;this.svg.style.width=w+'px';this.svg.style.height=h+'px';this.svg.style.touchAction=this.mode==='edit'?'pan-y':'none';
+  const paths=(this.outline?.paths||[]).map((p,i)=>`<path d="${p.points.map((v,n)=>(n?'L':'M')+v.join(' ')).join(' ')}${p.kind==='detail'?'':' Z'}" fill="${p.kind==='outer'?'#83d9ad22':'none'}" stroke="${p.kind==='detail'?'#f2d06e':'#23e69d'}" stroke-width="4" vector-effect="non-scaling-stroke"/>${this.mode==='edit'?p.points.map((v,j)=>`<circle data-point="${i}:${j}" tabindex="0" role="button" aria-label="${p.kind} point ${j+1}; arrow keys to move" cx="${v[0]}" cy="${v[1]}" r="${this.selected?.path===i&&this.selected?.index===j?12:7}" fill="#fff" stroke="#0c573a" stroke-width="1.5" vector-effect="non-scaling-stroke"/>`).join(''):''}`).join('');
+  const working=this.points.length?`<polyline points="${this.points.map(p=>p.join(',')).join(' ')}" fill="none" stroke="#f6bc3c" stroke-width="3" vector-effect="non-scaling-stroke"/>${this.points.map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="9" fill="#f6bc3c"/>`).join('')}`:'';
+  const crop=this.mode==='crop'&&this.drag?`<rect x="${Math.min(this.drag.start[0],this.drag.end[0])}" y="${Math.min(this.drag.start[1],this.drag.end[1])}" width="${Math.abs(this.drag.end[0]-this.drag.start[0])}" height="${Math.abs(this.drag.end[1]-this.drag.start[1])}" fill="#e7c65333" stroke="#ffcf4e" stroke-width="2" vector-effect="non-scaling-stroke"/>`:'';
+  this.svg.innerHTML=`<image href="${this.url}" x="0" y="0" width="1000" height="1000" preserveAspectRatio="none"/>${paths}${working}${crop}`;
+  for(const [id,mode] of [['ref-trace-outer','outer'],['ref-trace-hole','hole'],['ref-trace-detail','detail'],['ref-crop','crop'],['ref-edit','edit']])$('#'+id).setAttribute('aria-pressed',String(this.mode===mode));
+  $('#ref-finish').disabled=!['outer','hole','detail'].includes(this.mode);$('#ref-remove').disabled=!this.selected;
+ }
+ aspect(){const b=this.outline&&outlineBounds(this.outline.paths);return b?(b.right-b.left)*this.imageAspect/(b.bottom-b.top):null;}
+}
