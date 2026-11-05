@@ -3,3 +3,16 @@
 /.env.*
 !/.env.example
 /*.tar.gz
+
+# Full-stack site build and local runtime
+/node_modules/
+/dist/
+/.next/
+/.vinext/
+/.wrangler/
+/.sites-runtime/
+/outputs/
+/work/
+.dev.vars*
+*.tsbuildinfo
+next-env.d.ts

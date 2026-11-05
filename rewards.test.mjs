@@ -2,7 +2,7 @@ import {readFileSync} from 'node:fs';
 import {runInNewContext} from 'node:vm';
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-const sandbox={};runInNewContext(readFileSync(new URL('./dist/rewards.js',import.meta.url),'utf8'),sandbox);
+const sandbox={};runInNewContext(readFileSync(new URL('./public/rewards.js',import.meta.url),'utf8'),sandbox);
 const R=sandbox.RebagRewards,now='2026-11-03T10:00:00Z';
 const make=(id,subtotal=499)=>({id,subtotal,created:now});
 const garments=[{name:'Blue jeans',material:'denim'},{name:'Cotton shirt',material:'cotton'}];

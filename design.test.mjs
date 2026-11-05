@@ -2,7 +2,7 @@ import {readFileSync} from 'node:fs';
 import {runInNewContext} from 'node:vm';
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-const sandbox={URL};runInNewContext(readFileSync(new URL('./dist/design.js',import.meta.url),'utf8'),sandbox);
+const sandbox={URL};runInNewContext(readFileSync(new URL('./public/design.js',import.meta.url),'utf8'),sandbox);
 const D=sandbox.RebagDesign;
 const make={id:'RB-test',route:'own-fabric',shape:'tote',bagName:'The Everyday Tote',serviceArea:'Delhi',colour:'denim',pattern:'patch',strap:'matching',initials:'TS',preservation:'Keep the original buttons',notes:'Pocket for a book',subtotal:599,total:549,pointsRedeemed:50,fabricUse:'preserved panel',hasPhoto:true};
 test('own-fabric brief preserves choices and explains colour, photo and cutting boundaries',()=>{const b=D.brief(make,[{id:'G1',name:'Dad’s shirt',material:'cotton',purpose:'bag-fabric',status:'pending',points:0}]);const text=D.text(b);for(const value of ['Dad’s shirt','Keep the original buttons','The Everyday Tote','Delhi','preserved panel','INR 549','not saved','no permission to cut']) assert.ok(text.includes(value),value);assert.equal(b.fabricSource,'Your approved fabric');assert.match(b.colourNote,/actual colour|Actual colour/);});

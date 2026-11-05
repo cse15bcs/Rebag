@@ -6,7 +6,7 @@ import {tmpdir} from 'node:os';
 import path from 'node:path';
 import {createPaymentService} from './server/payments.mjs';
 import {sign,verify,gatewayConfig,createGatewayPayment} from './server/youpi.mjs';
-import {quote,nextStatus} from './dist/payment-core.mjs';
+import {quote,nextStatus} from './public/payment-core.mjs';
 
 const design={shape:'tote',pattern:'plain',strap:'matching'};
 const external={YOUPI_MODE:'external',YOUPI_API_URL:'http://127.0.0.1:6100',YOUPI_CHECKOUT_ORIGIN:'http://127.0.0.1:7000',YOUPI_MERCHANT_ID:'test-merchant',YOUPI_MERCHANT_API_KEY:'fixture-api-key',YOUPI_WEBHOOK_SECRET:'fixture-webhook-secret',PUBLIC_STORE_URL:'http://localhost:4173'};

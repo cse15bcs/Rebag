@@ -1,0 +1,1 @@
+ALTER TABLE `design_approvals` ADD `approval_text` text DEFAULT 'I approve the shape, requested dimensions, layout and personal details shown in this design version. I understand that a maker must still confirm fabric suitability, construction, the final quote and separate permission to cut any treasured fabric.' NOT NULL;

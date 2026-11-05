@@ -1,6 +1,6 @@
 import {DatabaseSync} from 'node:sqlite';
 import {randomBytes,randomUUID,createHash,createHmac,timingSafeEqual} from 'node:crypto';
-import {quote,nextStatus} from '../dist/payment-core.mjs';
+import {quote,nextStatus} from '../public/payment-core.mjs';
 import {gatewayConfig,createGatewayPayment,verify,sign} from './youpi.mjs';
 
 const hash=value=>createHash('sha256').update(value).digest('hex');

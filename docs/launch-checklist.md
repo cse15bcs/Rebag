@@ -17,6 +17,7 @@ Planning baseline: 4 November 2026; founder direction updated 5 November 2026. C
 - The prototype is privately hosted and the application source is on GitHub.
 - Bag customization, garment tracking, points and checkout are demonstrations.
 - Orders and reward balances are stored in the browser, not in customer accounts or a production database.
+- Design-intent approvals now have a separate signed-in, site-backed D1/R2 workflow with versioned blueprints and private reference photos. They do not create a paid order or approve cutting. See [the approval workflow](./design-approval-workflow.md).
 - Garment reviews are simulations. There are no live payments, courier bookings or maker notifications.
 - A keepsake-bag concept video and promotional copy are available. The imagery illustrates the idea, rather than showing manufactured samples.
 
