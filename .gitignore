@@ -19,3 +19,6 @@ next-env.d.ts
 
 # Second visual version is assembled from its template and shared studio.
 /public/design-two.html
+
+# Orbit Lab is assembled from its template and the shared bag illustration.
+/public/future-orbit.html
