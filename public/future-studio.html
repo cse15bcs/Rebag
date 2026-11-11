@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f4f6f2">
+  <title>Rebag Future Studio — Design Preview</title><meta name="description" content="A lightweight interactive design exploration for Rebag. Shape, colour and transform an illustrated bag concept.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="future-studio.css"><script src="future-studio.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#playground">Skip to the interactive concept</a>
+  <header class="future-header shell"><a class="future-logo" href="future-studio.html" aria-label="Rebag Future Studio home">rebag<span>.</span></a><span class="edition-name"><i aria-hidden="true"></i> FUTURE STUDIO / 03</span><nav aria-label="Design versions"><a href="index.html">Design 01</a><a href="design-two.html">The Atelier <span>&nearr;</span></a></nav></header>
+  <main>
+    <section class="future-hero shell" aria-labelledby="future-title">
+      <div class="hero-copy"><div class="eyebrow"><span class="tiny-cross" aria-hidden="true">+</span> A LITTLE FUTURE. A LOT OF FEELING.</div><h1 id="future-title">Keep the <br>feeling.<br><span>Change <br>the form.</span></h1><p>A familiar fabric, reimagined. Explore a new shape for the things you want to keep close.</p><div class="hero-actions"><button class="primary-button" id="watch-transform">Watch it take shape <span aria-hidden="true">&nearr;</span></button><a href="#playground" class="quiet-link">Make it yours <span>&darr;</span></a></div><p class="preview-note"><span aria-hidden="true">&#10035;</span> A visual playground. No order, upload or payment.</p></div>
+      <div class="concept-stage" id="playground" aria-labelledby="playground-title">
+        <div class="stage-heading"><h2 id="playground-title">YOUR SECOND-STORY OBJECT</h2><span>INTERACTIVE CONCEPT</span></div>
+        <div class="stage-grid" aria-hidden="true"></div><div class="ambient-orb" aria-hidden="true"></div><span class="coordinate coordinate-one" aria-hidden="true">+</span><span class="coordinate coordinate-two" aria-hidden="true">+</span><span class="coordinate coordinate-three" aria-hidden="true">+</span>
+        <div class="bag-interaction" id="bag-interaction" tabindex="0" role="group" aria-label="Interactive bag illustration. Drag horizontally or use left and right arrow keys to tilt. Press Home to reset." aria-describedby="concept-caption">
+          <div class="bag-object" id="bag-object">
+            <svg id="future-bag" viewBox="0 0 480 520" role="img" aria-labelledby="bag-title bag-desc">
+              <title id="bag-title">Everyday Tote concept</title><desc id="bag-desc">An interactive illustrated fabric bag. This is a visual concept, not a manufactured sample or a three-dimensional production model.</desc>
+              <defs>
+                <pattern id="weave" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M0 0L5 5M0 5L5 0" fill="none" stroke="#ffffff" stroke-opacity=".13" stroke-width=".6"/><path d="M0 1H5" stroke="#172822" stroke-opacity=".09" stroke-width=".6"/></pattern>
+                <linearGradient id="surface-light" x1="0" x2="1"><stop stop-color="#fff" stop-opacity=".23"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#10221b" stop-opacity=".16"/></linearGradient>
+                <clipPath id="fabric-clip"><path id="fabric-clip-path" d="M130 196H350Q362 196 364 210L387 422Q389 438 373 438H107Q91 438 93 422L116 210Q118 196 130 196Z"/></clipPath>
+              </defs>
+              <ellipse id="object-shadow" cx="240" cy="469" rx="145" ry="15" fill="#344739" opacity=".12"/>
+              <g id="bag-handles"><path id="back-handle" d="M173 204V131C173 43 307 43 307 131V204" fill="none" stroke="var(--fabric-dark)" stroke-width="21" transform="translate(12 -9)" opacity=".34"/><path id="front-handle" d="M173 204V131C173 43 307 43 307 131V204" fill="none" stroke="var(--fabric)" stroke-width="20"/><path id="handle-stitch" d="M173 204V131C173 43 307 43 307 131V204" fill="none" stroke="#e9e6ce" stroke-opacity=".75" stroke-width="1.2" stroke-dasharray="3 4"/></g>
+              <path id="bag-depth" d="M349 197L365 200L398 426L384 440Z" fill="var(--fabric-dark)" opacity=".5"/>
+              <path id="fabric-body" d="M130 196H350Q362 196 364 210L387 422Q389 438 373 438H107Q91 438 93 422L116 210Q118 196 130 196Z" fill="var(--fabric)" stroke="var(--fabric-dark)" stroke-opacity=".35"/>
+              <g clip-path="url(#fabric-clip)"><rect width="480" height="520" fill="url(#weave)"/><rect x="90" y="100" width="320" height="360" fill="url(#surface-light)"/><path id="panel-seam" d="M124 205Q240 215 356 205" fill="none" stroke="var(--fabric-dark)" stroke-opacity=".3" stroke-width="3"/></g>
+              <path id="body-stitch" d="M130 196H350Q362 196 364 210L387 422Q389 438 373 438H107Q91 438 93 422L116 210Q118 196 130 196Z" transform="translate(240 320) scale(.94) translate(-240 -320)" fill="none" stroke="#f3ecd8" stroke-opacity=".75" stroke-width="1.2" stroke-dasharray="3 4"/>
+              <g id="bag-pocket"><path d="M183 270H297L293 350Q240 367 187 350Z" fill="var(--fabric-light)" stroke="var(--fabric-dark)" stroke-opacity=".16"/><path d="M189 277H291L287 346Q240 359 193 346Z" fill="none" stroke="#e7e4ca" stroke-width="1" stroke-dasharray="3 4"/></g>
+              <g id="bag-label"><rect x="304" y="375" width="62" height="25" rx="1" fill="#e9e4d5" transform="rotate(-3 335 387)"/><text x="335" y="392" text-anchor="middle" fill="#3d4d43" font-size="11" font-family="sans-serif" letter-spacing=".4">rebag</text></g>
+              <text id="bag-initials" x="240" y="405" text-anchor="middle" fill="#f5eee0" font-family="Georgia,serif" font-size="23" letter-spacing="3"></text>
+            </svg>
+          </div>
+        </div>
+        <div class="object-caption"><span class="object-index">001</span><div><strong id="object-name">The Everyday Tote</strong><small id="concept-caption">Drag to tilt &middot; illustration only</small></div><button id="reset-view" type="button" aria-label="Reset bag view">&#8634;</button></div>
+        <aside class="floating-controls" aria-label="Concept controls"><div class="controls-top"><span>MAKE IT YOURS</span><span aria-hidden="true">&#10035;</span></div><fieldset><legend>01 / Shape</legend><div class="shape-switch"><button type="button" data-future-shape="tote" aria-pressed="true">Tote</button><button type="button" data-future-shape="mini" aria-pressed="false">Mini</button></div></fieldset><fieldset><legend>02 / Fabric mood</legend><div class="fabric-swatches"><button type="button" data-fabric="sage" aria-label="Sage fabric mood" aria-pressed="true" style="--swatch:#8a9b85"></button><button type="button" data-fabric="denim" aria-label="Denim fabric mood" aria-pressed="false" style="--swatch:#728fa4"></button><button type="button" data-fabric="copper" aria-label="Copper fabric mood" aria-pressed="false" style="--swatch:#bc8971"></button><span id="fabric-name">Sage</span></div></fieldset><label class="initials-label" for="future-initials">03 / Your initials <span>optional</span></label><input id="future-initials" maxlength="3" pattern="[A-Za-z]{0,3}" placeholder="e.g. TS" autocomplete="off" aria-describedby="material-note"><p id="material-note">Colour moods are illustrative. Your actual cloth determines its colour and texture.</p></aside>
+        <div class="form-control"><div><label for="form-progress">FROM FABRIC TO CARRY</label><output id="form-state" for="form-progress">Bag concept</output></div><input type="range" id="form-progress" min="0" max="100" step="1" value="100" aria-label="Transform fabric into a bag"><div class="range-endpoints"><span>A familiar fabric</span><span>A new beginning</span></div></div>
+        <p id="concept-status" class="sr-only" aria-live="polite"></p>
+      </div>
+    </section>
+    <section class="future-story shell" aria-labelledby="story-title"><div class="story-top"><div class="eyebrow">SAME SOUL. NEW SILHOUETTE.</div><h2 id="story-title">The future can feel<br><span>familiar.</span></h2><p>We imagine thoughtful technology making the process clearer, while the things that matter stay personal.</p></div><div class="story-line" aria-hidden="true"><svg viewBox="0 0 1100 80" preserveAspectRatio="none"><path d="M0 40H245Q275 40 275 20T305 20Q325 20 325 40H605Q635 40 635 60T665 60Q685 60 685 40H1100"/></svg><i></i><i></i><i></i></div><div class="story-steps"><article><span>01 / THE MATERIAL</span><h3>A little history.</h3><p>A shirt, a bandana, a favourite piece of fabric. Something familiar to start with.</p></article><article><span>02 / THE POSSIBILITIES</span><h3>A new perspective.</h3><p>Explore a shape and a material mood. Let the small details feel like you.</p></article><article><span>03 / THE NEXT CHAPTER</span><h3>Something to carry.</h3><p>A design to discuss with a maker, with fabric suitability and preservation agreed together.</p></article></div></section>
+    <section class="preview-end shell"><div><span class="eyebrow">THIS IS JUST THE VISUAL EXPLORATION</span><h2>Does this feel<br>like <em>your</em> Rebag?</h2></div><div><p>Try the controls, move the fabric slider and explore the look. Open the Atelier to use the fuller bag-design and checkout prototype.</p><a class="primary-button" href="design-two.html#collection">Open the Atelier studio <span>&nearr;</span></a><a class="quiet-link" href="index.html">Compare with design 01 &nearr;</a></div></section>
+  </main>
+  <footer class="future-footer shell"><a class="future-logo" href="future-studio.html">rebag<span>.</span></a><span>Made from memories. Carried with love.</span><span>Visual prototype / no live orders</span></footer>
+</body>
+</html>
