@@ -1,0 +1,3 @@
+Design,Maker and materials INR,Inbound garment courier INR,Outbound bag courier INR,Packaging INR,Payment costs INR,Rewards or discounts INR,Rework allowance INR,Other applicable costs INR,Total specified cost INR,Selling price INR,Remaining after specified costs INR,Status
+Everyday Tote,250,,,,,,,,"=IF(COUNT(B2:I2)=8,SUM(B2:I2),"""")",,"=IF(AND(ISNUMBER(J2),ISNUMBER(K2)),K2-J2,"""")",Planning assumption only - maker quote and remaining inputs pending
+Little Mood,250,,,,,,,,"=IF(COUNT(B3:I3)=8,SUM(B3:I3),"""")",,"=IF(AND(ISNUMBER(J3),ISNUMBER(K3)),K3-J3,"""")",Planning assumption only - maker quote and remaining inputs pending

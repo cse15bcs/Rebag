@@ -19,10 +19,15 @@ globalThis.RebagRewards = (() => {
   function limit(state,subtotal) { return Number.isFinite(subtotal)?Math.min(wallet(state).available,Math.floor(subtotal*policy.maxPercent/100/policy.rupeesPerPoint)):0; }
   function checkout(state,{make,garments,points=0,now}) {
     if(state.makes.some(m=>m.id===make.id)) throw Error('This request is already saved.');
-    if(make.quoteRequired&&points!==0)throw Error('A maker quote is required before redeeming points.');
+    if(make.quoteRequired&&points!==0)throw Error('A complete quote is required before redeeming points.');
     if(!Number.isSafeInteger(points)||points<0||points>limit(state,make.subtotal)) throw Error('Your points balance or checkout limit changed. Review the total and try again.');
     if(!Number.isInteger(garments.length)||garments.length<1||garments.length>20) throw Error('Add between 1 and 20 garments.');
-    state.makes.unshift({...make,pointsRedeemed:points,total:make.quoteRequired?null:make.subtotal-points*policy.rupeesPerPoint});
+    let total=make.quoteRequired?null:make.subtotal-points*policy.rupeesPerPoint;
+    if(make.delivery&&!make.quoteRequired){
+      const q=make.delivery;if(!Number.isFinite(make.subtotal)||make.subtotal<0||q.status!=='quoted'||q.pincode!==make.pincode||q.shape!==make.shape||q.route!==make.route||q.city!==make.serviceArea||q.garments!==garments.length||!Number.isSafeInteger(q.amountPaise)||q.amountPaise<0||q.amountPaise>10000000||!Number.isFinite(Date.parse(q.validUntil))||Date.parse(q.validUntil)<=Date.parse(now))throw Error('Refresh the courier quote before saving.');
+      total=(Math.round(make.subtotal*100)+q.amountPaise-points*100)/100;
+    }
+    state.makes.unshift({...make,pointsRedeemed:points,total});
     const ownFabric=make.route==='own-fabric';
     garments.forEach((g,i)=>state.garments.push({id:`${make.id}-G${i+1}`,orderId:make.id,name:g.name,material:g.material,purpose:ownFabric?'bag-fabric':'contribution',status:'pending',points:ownFabric?0:policy.pointsPerGarment,created:now}));
     if(points) state.ledger.push({id:`spend:${make.id}`,type:'debit',orderId:make.id,points,created:now,label:'Redeemed at checkout'});

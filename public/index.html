@@ -6,7 +6,7 @@
   <title>Rebag — Old clothes. New stories.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="design-approval.css"><link rel="stylesheet" href="reference-design.css"><script src="config.js" defer></script><script src="design.js" defer></script><script src="rewards.js" defer></script><script src="app.js" defer></script><script src="payment-entry.js" defer></script><script src="design-approval.js" type="module"></script>
+  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="delivery.css"><link rel="stylesheet" href="design-approval.css"><link rel="stylesheet" href="reference-design.css"><script src="config.js" defer></script><script src="design.js" defer></script><script src="rewards.js" defer></script><script src="delivery.js" defer></script><script src="app.js" defer></script><script src="payment-entry.js" defer></script><script src="design-approval.js" type="module"></script>
 </head>
 <body>
   <div class="announcement">TAKING SHAPE IN DELHI NCR. <span>TWO WAYS TO MAKE IT YOURS. ↗</span></div>
@@ -44,9 +44,10 @@
     </section>
     <section class="collection wrap section" id="collection" aria-labelledby="collection-title">
       <div class="section-heading"><div><div class="eyebrow">TWO STARTER SHAPES. YOUR OWN TAKE.</div><h2 id="collection-title">Pick your next plus-one.</h2></div><p>Use your own approved fabric,<br>or explore Rebag material preferences.</p></div>
+      <div class="delivery-picker"><div><label for="delivery-pincode">Your six-digit delivery PIN code</label><input id="delivery-pincode" inputmode="numeric" autocomplete="postal-code" maxlength="6" pattern="[1-9][0-9]{5}" placeholder="Enter PIN code" aria-describedby="delivery-status"></div><p id="delivery-status" role="status" aria-live="polite">Enter your PIN to check a price including garment collection and bag delivery through our Meerut base.</p></div>
       <div class="filters" role="group" aria-label="Filter bags"><button class="chip active" aria-pressed="true" data-filter="all">Both starter shapes</button><button class="chip" aria-pressed="false" data-filter="everyday">Everyday totes</button><button class="chip" aria-pressed="false" data-filter="mini">Little bags</button></div>
       <div class="product-grid" id="products"></div>
-      <p class="price-note">Illustrated concepts and sample making fees. Samples, dimensions, material availability and final pricing will be confirmed with the maker.</p>
+      <p class="price-note">*Before a courier quote, prices are sample making fees only. A quoted price includes garment collection to Meerut and bag delivery to your PIN. Customization may change the total; samples, parcel suitability and the final quote need confirmation.</p>
     </section>
     <section class="how-section" id="how-it-works" aria-labelledby="how-title"><div class="wrap section">
       <div class="section-heading"><div><div class="eyebrow">FROM CLOSET TO CARRY-ON</div><h2 id="how-title">A glow-up in three acts.</h2></div><span class="handwritten">a good kind of baggage ↴</span></div>
@@ -106,14 +107,15 @@
       </div>
       <div class="form-step" data-step="2" hidden>
         <h3 id="clothes-title">Meet the old favourites.</h3><p class="studio-help" id="clothes-note"></p>
-        <label for="service-area">Your Delhi NCR area</label><select id="service-area" required><option value="">Choose an area</option><option>Delhi</option><option>Gurugram</option><option>Noida</option><option>Greater Noida</option><option>Ghaziabad</option><option>Faridabad</option><option>Other Delhi NCR area</option></select><small class="field-help">Our planned launch region. Exact pickup/drop-off coverage is still being arranged.</small>
+        <label for="design-pincode">Delivery PIN code</label><input id="design-pincode" inputmode="numeric" autocomplete="postal-code" maxlength="6" pattern="[1-9][0-9]{5}" placeholder="Six-digit PIN" required aria-describedby="studio-delivery-status"><p id="studio-delivery-status" class="delivery-status" role="status" aria-live="polite"></p>
+        <label for="service-area">Your service city</label><select id="service-area" required><option value="">Choose an area</option><option>Delhi</option><option>Meerut</option><option>Noida</option><option>Greater Noida</option><option>Ghaziabad</option></select><small class="field-help">Planned cities: Delhi, Meerut, Ghaziabad, Noida and Greater Noida. Courier serviceability needs confirmation for your PIN.</small>
         <label for="material">Default fabric for your garments</label><select id="material" name="material"><option value="denim">Denim / jeans</option><option value="cotton">Cotton / shirts</option><option value="mixed">A mix of sturdy fabrics</option><option value="other">Something else — needs a maker’s review</option></select>
         <label for="garments" id="garments-label">How many garments can you offer?</label><input type="number" id="garments" name="garments" min="1" max="20" value="2" required><small class="field-help">Track each item below. The maker will confirm suitability and the amount needed.</small>
         <div id="garment-list"></div><p class="points-pending-note" id="pending-preview"></p>
         <div data-own-only><label for="preservation">What should we preserve? <span>(optional)</span></label><textarea id="preservation" maxlength="500" rows="2" placeholder="Keep the original buttons, pocket or embroidery. Tell us what should stay intact."></textarea><small class="field-help">No personal story is required. A maker will agree the design and any cutting with you.</small></div>
         <label for="cloth-photo">Show us your fabric <span>(optional)</span></label><input type="file" id="cloth-photo" accept="image/jpeg,image/png,image/webp"><small class="field-help">JPG, PNG or WebP, up to 5 MB. Kept on your device until you explicitly approve and send the design. Local draft saving does not keep this photo.</small><p id="photo-status" role="status"></p><img id="photo-preview" alt="Your selected garment photo" hidden>
         <label class="check-label"><input type="checkbox" id="condition" required><span>My clothes are washed, dry and untorn, with no weak or damaged patches.</span></label>
-        <label for="handover">Handover preference</label><select id="handover" name="handover"><option>Decide after fabric approval</option><option>Pickup, if available in my area</option><option>Drop-off, if a location is available</option></select><div class="form-notice">Photos are a first look. Fabric suitability, your design, what may be cut and the final quote need approval before making.</div>
+        <label for="handover">Handover preference</label><select id="handover" name="handover"><option>Decide after fabric approval</option><option>Courier collection to Meerut, after approval</option></select><div class="form-notice">Photos are a first look. Fabric suitability, your design, what may be cut and the final quote need approval before making.</div>
       </div>
       <div class="form-step" data-step="3" hidden>
         <h3>One very you design.</h3><div id="review-content"></div>
@@ -124,7 +126,7 @@
         <div class="form-notice"><strong>Save a local demo design.</strong> It stays in this browser. This simulates a checkout: any selected demo points are deducted when saved. No payment, production slot, garment handover or cutting is authorized.</div>
         <label class="check-label"><input type="checkbox" id="demo-consent" required><span>I understand this saves a demo design only, including any simulated points use.</span></label>
       </div>
-      <p id="form-error" role="alert"></p><div class="studio-bottom"><div><small>Sample making estimate</small><strong id="estimate"></strong></div><div><button type="button" id="back" class="button secondary" hidden>Back</button><button type="button" id="next" class="button">Choose my design →</button></div></div>
+      <p id="form-error" role="alert"></p><div class="studio-bottom"><div><small>Sample price*</small><strong id="estimate"></strong></div><div><button type="button" id="back" class="button secondary" hidden>Back</button><button type="button" id="next" class="button">Choose my design →</button></div></div>
     </form></div>
   </dialog>
   <dialog id="makes" aria-labelledby="makes-title"><div class="modal-head"><div><span class="eyebrow">SAVED ON THIS DEVICE</span><h2 id="makes-title">Your next chapters.</h2></div><button class="icon-button" data-close="makes" aria-label="Close saved makes">×</button></div><div id="makes-list"></div></dialog>

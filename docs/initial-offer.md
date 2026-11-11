@@ -1,6 +1,6 @@
 # Rebag — Step 1: initial offer
 
-Status: founder direction recorded on 5 November 2026. Launch area, initial shapes, two product routes, the social-first acquisition approach and later-order reward redemption are confirmed. The Instagram handle is not ready. Other contact details and manufacturing specifications remain to be confirmed. This document does not announce an active paid service.
+Status: founder direction updated on 11 November 2026. Launch area, initial shapes, two product routes, the social-first acquisition approach and later-order reward redemption are confirmed. The Instagram handle is not ready. Maker pricing/capacity inputs and courier preference are recorded below; manufacturing specifications and commercial arrangements remain to be confirmed. This document does not announce an active paid service.
 
 ## Product promise
 
@@ -12,13 +12,15 @@ Serve customers across Delhi NCR, India. The keepsake route includes people reme
 
 ## Confirmed launch model
 
-- Region: Delhi NCR. Exact collection/drop-off coverage remains an operational decision.
+- Planned customer service cities: Delhi, Meerut, Ghaziabad, Noida and Greater Noida. The main receiving and dispatch base is Meerut, Uttar Pradesh. Confirm exact base address/postcode and courier serviceability before accepting collection/delivery commitments.
 - Awareness and initial preorder conversations: Instagram.
 - Instagram handle: not ready, as confirmed by the founder. Prepare the website independently; show a clear unavailable/coming-soon contact state until a real destination is configured. Do not add a fictional handle or a working-looking chat link without a destination.
 - WhatsApp: a proposed conversation/handover channel once the business number is supplied.
 - Website: prepared in parallel as a place to understand the concept, build a bag and start a conversation.
-- The founder knows approximately 4–5 tailors. The selected maker, rates, capacity and turnaround have not yet been agreed.
-- Physical sample completion was not confirmed; do not describe samples as ready.
+- The founder proposes starting with five tailors at 50 bags each per week: 250 bags/week in total. This is a planning assumption pending maker availability and observed output, not a promised production rate.
+- Use INR 250 per bag including material as the founder's maker-cost assumption. Confirm the actual inclusions and both design quotes before setting customer prices.
+- The founder chose to make samples of both website designs, Everyday Tote and Little Mood, and compare them before final product approval. Other bag designs are available, but these two samples are not yet completed. Sample budget and completion date remain undecided. See [the sample and pilot plan](./sample-and-pilot-plan.md).
+- Courier handover and the Meerut base are confirmed. Provider, exact base address/postcode, coverage, charges and tariffs for each shipping leg remain pending.
 
 ## Two product routes
 
@@ -72,6 +74,8 @@ Before accepting or cutting an irreplaceable item, record:
 
 Never treat a garment as approved for cutting solely because its photo was submitted. Public use of a customer's photographs or story requires a separate permission choice.
 
+Customer pricing decision: the customer funds collection and delivery through one PIN-based inclusive price. Explain this under products with an asterisk; do not show a separate courier line. Current provider tariffs and the Meerut origin PIN are still pending. See [postcode pricing](./postcode-pricing.md).
+
 ## First public release
 
 Founder direction: introduce the concepts on Instagram and receive initial preorder enquiries through conversation. The website will be prepared in parallel, with a clear chat action supporting customers' first order. Quotes and order confirmation can initially be handled manually in the chosen channel. There is no requirement to launch website payment collection in this phase.
@@ -96,13 +100,13 @@ Clearly explain that an enquiry is not a confirmed order or permission to cut th
 | Customer focus | Own-fabric/keepsake bags for people and pets, plus clothes-for-points and Rebag-made bags. | Confirmed |
 | Launch area | Delhi NCR, India; detailed pickup/drop-off coverage to follow. | Region confirmed |
 | Starter designs | Everyday Tote and Little Mood; a customization window for shape/design. | Confirmed; dimensions/sample validation pending |
-| Maker contacts | Founder knows 4–5 tailors. | Contacts available; selected maker and terms pending |
-| Samples | Physical samples not yet confirmed. | Pending |
+| Maker contacts | Start with five tailors. | Founder direction recorded; named makers and terms pending |
+| Samples | Founder chose one Everyday Tote and one Little Mood sample; compare completed designs before final product approval. | Sample selection confirmed; physical completion, budget and date pending |
 | Initial acquisition | Instagram concept awareness and preorder conversations; website developed in parallel. | Confirmed |
 | Chat destinations | Instagram is primary; the handle is not ready. WhatsApp can support enquiries when configured. | Instagram not ready; WhatsApp number pending |
-| Making fees | Quote after inspection and design approval; prototype amounts remain illustrative. | Pending maker costing |
-| Production capacity and turnaround | Publish after sample production and maker agreement. | Pending |
-| Initial handover | Decide pickup, drop-off or customer shipping for the chosen area. | Pending |
+| Maker cost and customer fees | Assume INR 250/bag including material; customer prices must include remaining costs and final design review. | Founder planning input; maker quotes/inclusions and selling prices pending |
+| Production capacity and turnaround | Proposed five makers x 50 bags/week = 250; validate before offering slots. | Founder planning input; actual rate and turnaround pending |
+| Initial handover | Courier services for garment receipt and finished-bag dispatch through Meerut, Uttar Pradesh. | Channel and base city confirmed; exact address/postcode, provider, coverage and charges pending |
 | Garment rewards | Contributions earn points only after acceptance; redeem on a later order. Values, limits and live account/approval rules need final costing and implementation. | Later-order timing confirmed; other commercial rules pending |
 
 ## Prototype implementation checkpoint

@@ -16,7 +16,7 @@ export function normalizeDesign(raw,{preview=false}={}){
  }else if(d.shape==='reference'||d.pattern==='reference'||d.strap==='reference'||d.colour==='reference')throw Error('Choose a starter shape for shape mode.');
  d.externalPocket=raw.externalPocket===true;d.initials=text(raw.initials,3).toUpperCase();if(!/^[A-Z]{0,3}$/.test(d.initials))throw Error('Initials must contain up to three letters.');
  for(const key of ['notes','preservation','referenceNotes'])d[key]=text(raw[key]);
- d.serviceArea=text(raw.serviceArea,80);if(!['Delhi','Gurugram','Noida','Greater Noida','Ghaziabad','Faridabad','Other Delhi NCR area'].includes(d.serviceArea))throw Error('Choose your Delhi NCR area.');
+ d.serviceArea=text(raw.serviceArea,80);if(!['Delhi','Meerut','Gurugram','Noida','Greater Noida','Ghaziabad','Faridabad','Other Delhi NCR area'].includes(d.serviceArea))throw Error('Choose your Delhi NCR area.');
  d.fabricUse=d.route==='own-fabric'?text(raw.fabricUse,100):'';d.rebagMaterial=d.route==='contribution'?text(raw.rebagMaterial,100):'';
  if(!Array.isArray(raw.garments)||raw.garments.length<1||raw.garments.length>20)throw Error('List 1–20 garments.');
  d.garments=raw.garments.map(g=>{const name=text(g?.name,80),material=text(g?.material,30);if(!name||!['denim','cotton','mixed','other'].includes(material))throw Error('Each garment needs a name and fabric type.');return {name,material};});return d;
