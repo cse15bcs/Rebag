@@ -1,2 +1,2 @@
-﻿import {redirect} from "next/navigation";
-export default function Home(){redirect("/index.html");}
+import {redirect} from "next/navigation";
+export default function Home(){redirect("/future-orbit.html");}

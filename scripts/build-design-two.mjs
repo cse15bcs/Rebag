@@ -1,5 +1,5 @@
 import {readFileSync,writeFileSync} from 'node:fs';
-const source=readFileSync(new URL('../public/index.html',import.meta.url),'utf8');
+const source=readFileSync(new URL('../public/design-one.html',import.meta.url),'utf8');
 const head=source.match(/<head>([\s\S]*?)<\/head>/)?.[1];
 const start=source.indexOf('<dialog id="studio"'),end=source.lastIndexOf('</body>');
 if(!head||start<0||end<start)throw Error('Shared Rebag studio markup is missing.');

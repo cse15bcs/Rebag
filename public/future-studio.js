@@ -35,10 +35,10 @@
  range.addEventListener('input',()=>{stop();progress=Number(range.value);render();});
  $('#watch-transform').addEventListener('click',()=>{transform();if(matchMedia('(max-width:800px)').matches)stage.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});});
  $('#reset-view').addEventListener('click',()=>{rotation=-16;tilt=-7;orientation();announce('View reset.');});
- view.addEventListener('pointerdown',e=>{if(e.button!==0)return;stop();drag={x:e.clientX,y:e.clientY,rotation,tilt};view.setPointerCapture(e.pointerId);});
+ view.addEventListener('pointerdown',e=>{if(e.button!==0||e.target.closest('button,a,input,select,textarea'))return;stop();drag={x:e.clientX,y:e.clientY,rotation,tilt};view.setPointerCapture(e.pointerId);});
  view.addEventListener('pointermove',e=>{if(!drag)return;rotation=Math.max(-38,Math.min(38,drag.rotation+(e.clientX-drag.x)*.2));tilt=Math.max(-16,Math.min(12,drag.tilt-(e.clientY-drag.y)*.08));orientation();});
  for(const event of ['pointerup','pointercancel','lostpointercapture'])view.addEventListener(event,()=>{drag=null;});
- view.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','Home'].includes(e.key))return;e.preventDefault();stop();if(e.key==='Home'){rotation=-16;tilt=-7;}else rotation=Math.max(-38,Math.min(38,rotation+(e.key==='ArrowRight'?5:-5)));orientation();});
+ view.addEventListener('keydown',e=>{if(e.target!==view||!['ArrowLeft','ArrowRight','Home'].includes(e.key))return;e.preventDefault();stop();if(e.key==='Home'){rotation=-16;tilt=-7;}else rotation=Math.max(-38,Math.min(38,rotation+(e.key==='ArrowRight'?5:-5)));orientation();});
  const story=$('.future-story');if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){story.classList.add('is-visible');observer.disconnect();}},{threshold:.15});observer.observe(story);}else story.classList.add('is-visible');
  render();orientation();if(!reduced)setTimeout(()=>{if(!interacted)transform();},450);
  document.addEventListener('visibilitychange',()=>{if(document.hidden){const animating=!!frame;stop();if(animating){progress=100;render();}}});
