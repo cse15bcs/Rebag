@@ -1,5 +1,7 @@
 # Reference-photo designs
 
+**Paused on 11 November 2026:** the reference-photo radio option is commented out in the storefront. Customers currently start from Everyday Tote or Little Mood. The hidden controls, tracing/editor modules, approval validation and existing records remain intact. Uncomment the labelled radio option in `public/index.html` to restore entry into this workflow.
+
 The two starting points are independent:
 
 - **Start from a bag shape** uses the Everyday Tote or Little Mood, with the existing colour, layout, handle and pocket controls.
