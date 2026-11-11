@@ -1,16 +1,15 @@
-# PIN-based inclusive price
+# Checkout postcode pricing
 
-Founder decision: customers fund courier costs through one displayed, postcode-specific combined price. Do not list a separate courier charge in the customer price breakdown. Explain the inclusion with an asterisk under each product and in review.
+Latest founder direction: postcode entry, courier charges and the complete price breakdown belong in the final checkout/review step. This replaces the earlier catalogue-level inclusive-price approach.
 
 ## Customer flow
 
-1. Before a PIN is entered, show the starting sample making fee, e.g. **From INR 399***, with a note that collection/delivery is not quoted yet.
-2. Enter a six-digit Indian PIN in the catalogue or studio. The fields stay synchronized for this page session.
-3. If a current configured tariff matches the PIN, service city, design, route and garment count, add both courier legs to the making fee and display one inclusive estimate. Recalculate when any of those inputs change.
-4. Show any available earlier contribution points as a discount against the making fee only, using the existing 25% demo cap. Do not increase redemption eligibility because delivery raises the total. Newly offered garments still earn only after acceptance for a later order.
-5. Save the postcode, quote status, rate identity/expiry and inclusive price in the local draft. Customer TXT/JSON briefs show the bundled total and inclusion note. Earlier local drafts retain their old delivery-excluded meaning.
-
-Suggested copy: **"*Includes garment collection to Meerut and bag delivery to your PIN. Customization may change the total. Parcel suitability and the final quote need confirmation."**
+1. The main page shows sample bag prices only. There is no postcode field, courier estimate, courier asterisk or shipping-dependent catalogue price.
+2. The design window calculates the bag and customization charges independently of courier charges. Its footer shows the bag plus customization subtotal.
+3. The final Review & checkout step shows the selected design, postcode input and a complete breakdown: bag price, layout customization, handle/strap customization, customization subtotal, bag/customization subtotal, earlier points discount, subtotal after points, courier collection/delivery charge and final estimated total.
+4. A current matching tariff supplies the courier charge after postcode entry. Missing, invalid or unmatched postcodes leave the bag/customization calculations visible and mark only the courier/final total as pending. Postcode entry is required for final draft saving, not for reaching checkout.
+5. Earlier accepted contribution points apply to making/customization charges under the existing demo cap; courier charges do not increase eligibility. Entering a matching postcode refreshes point controls immediately. New contributions remain usable only on a later order after acceptance.
+6. New local drafts carry checkout presentation metadata. Downloaded briefs show separate bag, customization and courier amounts. Older delivery-inclusive drafts retain their recorded price meaning when exported.
 
 ## Current setup and missing inputs
 
@@ -18,7 +17,7 @@ There is no connected courier provider and no approved tariff table. `public/con
 
 Unconfigured, expired, ambiguous, mismatched or over-limit tariffs show **Courier quote required**. The customer can still save an unpriced design draft with no points spent; it is not a free-delivery or zero-value order. The currently displayed making fees and all reward balances remain prototype values.
 
-To activate inclusive calculations, obtain the Meerut origin PIN and current provider quotations for both legs, including the relevant parcel weights/dimensions, garment limits, supported designs/routes, serviceable destination PINs and rate validity. Add only operator-confirmed tariff records. No API credentials belong in public configuration.
+To activate courier calculations, obtain the Meerut origin PIN and current provider quotations for both legs, including the relevant parcel weights/dimensions, garment limits, supported designs/routes, serviceable destination PINs and rate validity. Add only operator-confirmed tariff records. No API credentials belong in public configuration.
 
 A record has these fields:
 
@@ -27,7 +26,7 @@ A record has these fields:
 | `id` | Unique tariff reference, 1–80 characters. |
 | `pincode`, `city` | Exact destination PIN and one of Delhi, Meerut, Ghaziabad, Noida or Greater Noida. |
 | `shape` | `tote`, `mini` or `*` if the quoted parcel assumptions cover both. |
-| `route` | `own-fabric`, `contribution` or `*` if both are covered. Catalogue prices before route selection need a wildcard tariff. |
+| `route` | `own-fabric`, `contribution` or `*` if both are covered. Use a wildcard only when the approved parcel assumptions cover both routes. |
 | `maxGarments` | Confirmed parcel capacity, 1–20 garments. Larger counts require a fresh quotation. |
 | `collectionPaise`, `deliveryPaise` | Confirmed nonnegative integer paise amounts for the two legs. Both must be explicit, including any genuine zero. |
 | `validUntil` | Future ISO timestamp after which the tariff cannot be used. |

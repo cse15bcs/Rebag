@@ -23,7 +23,7 @@ Planning baseline: 4 November 2026; founder direction updated 11 November 2026. 
 - Garment reviews are simulations. There are no live payments, courier bookings or maker notifications.
 - A keepsake-bag concept video and promotional copy are available. The imagery illustrates the idea, rather than showing manufactured samples.
 
-Customer pricing decision: the customer funds collection and delivery through one PIN-based inclusive price. Explain this under products with an asterisk; do not show a separate courier line. Current provider tariffs and the Meerut origin PIN are still pending. See [postcode pricing](./postcode-pricing.md).
+Customer pricing decision (revised): show bag prices on the main page and calculate bag/customization charges independently. Collect the PIN and add courier charges as separate lines only in the final checkout/review breakdown. Current provider tariffs and the Meerut origin PIN are still pending. See [postcode pricing](./postcode-pricing.md).
 
 ## Suggested launch sequence
 

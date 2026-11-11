@@ -74,7 +74,7 @@ Before accepting or cutting an irreplaceable item, record:
 
 Never treat a garment as approved for cutting solely because its photo was submitted. Public use of a customer's photographs or story requires a separate permission choice.
 
-Customer pricing decision: the customer funds collection and delivery through one PIN-based inclusive price. Explain this under products with an asterisk; do not show a separate courier line. Current provider tariffs and the Meerut origin PIN are still pending. See [postcode pricing](./postcode-pricing.md).
+Customer pricing decision (revised): show bag prices on the main page and calculate bag/customization charges independently. Collect the PIN and add courier charges as separate lines only in the final checkout/review breakdown. Current provider tariffs and the Meerut origin PIN are still pending. See [postcode pricing](./postcode-pricing.md).
 
 ## First public release
 

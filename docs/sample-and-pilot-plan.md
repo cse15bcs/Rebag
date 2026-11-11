@@ -48,7 +48,7 @@ Once approved, share the same master measurements and construction brief with al
 Begin with five orders, subject to sample approval, actual quotes, receiving arrangements and customer communication readiness. This is a proposed trial size, not a founder-confirmed booking target. Where feasible, use one initial order per validated tailor to compare consistency; do not assign a sentimental item to an unvalidated process just to fill an allocation.
 
 1. Receive the Instagram enquiry and record the customer route, design, garment list, service area and preservation needs.
-2. Review photos and send a provisional quote as a single total including both courier legs, with an asterisk explaining the inclusion; retain the cost components internally.
+2. Review photos and send a provisional quote with separate bag, customization and courier collection/delivery amounts, followed by the final total.
 3. Agree handover terms and book garment shipping to the Meerut receiving base after its exact address and courier coverage are confirmed. Record tracking and a unique customer/order/garment reference.
 4. Photograph receipt, reconcile the item count and inspect suitability. For unsuitable fabric, discuss a revised design or return before cutting; agree return shipping charges.
 5. Obtain approval for the final design, fabric placement, what may be cut, remnants handling and final price. The site's design-intent approval alone does not authorize cutting.
@@ -68,7 +68,7 @@ Planned customer service cities are Delhi, Meerut, Ghaziabad, Noida and Greater 
 
 Record provider, service coverage, parcel size/weight, booked charge, tracking, sender/receiver, item count, packaging condition and responsibility for delays or loss. Agree customer charges before booking. No provider, rate or coverage is assumed by this plan.
 
-Customer pricing decision: the customer funds collection and delivery through one PIN-based inclusive price. Explain this under products with an asterisk; do not show a separate courier line. Current provider tariffs and the Meerut origin PIN are still pending. See [postcode pricing](./postcode-pricing.md).
+Customer pricing decision (revised): show bag prices on the main page and calculate bag/customization charges independently. Collect the PIN and add courier charges as separate lines only in the final checkout/review breakdown. Current provider tariffs and the Meerut origin PIN are still pending. See [postcode pricing](./postcode-pricing.md).
 
 ## Costing and scale-up
 
@@ -81,5 +81,5 @@ Review all five pilot orders for actual cost, making time, first-pass quality, r
 ## Next missing information
 
 1. Exact Meerut receiving/dispatch address and postcode, agreed privately before courier booking, and serviceable customer postcodes in the five planned cities.
-2. Provider tariffs for both courier legs. The founder chose a single PIN-based customer price including courier costs, with an asterisk explaining the inclusion and no separate courier line.
+2. Provider tariffs for both courier legs. The founder now wants PIN-based courier charges and an itemized price breakdown at checkout only.
 3. Maker confirmation of cost inclusions, two-sample completion date and the approved sample budget.
