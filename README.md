@@ -7,6 +7,12 @@ The selected home design is Orbit Studio (Design 04), in Indigo Copper. Both `/`
 
 The authored storefront is in `public/`. `dist/` is generated deployment output; do not edit it.
 
+The [Awesome DESIGN.md reference collection](docs/design-references.md) is available locally for future design exploration.
+
+[Taste Skill](docs/taste-skill.md) is installed for Codex. Run `npm run taste -- --help` for its design and browser-check tools.
+
+[UI UX Pro Max](docs/ui-ux-pro-max.md) is also installed. Run `npm run uiux -- --help` for its local UI/UX searches and design-system recommendations.
+
 Run `npm run dev` (PowerShell: `npm.cmd run dev`) and open the printed local URL. The portable Sites starter supports local test sign-in through `/signin-with-chatgpt?return_to=/`. Hosted authentication remains owned by Sites.
 
 Design approvals use D1 (`DB`) and private reference/fabric images use R2 (`BUCKET`). See [the design approval workflow](docs/design-approval-workflow.md) for setup, local migrations, approval scope and verification.
