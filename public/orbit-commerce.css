@@ -111,6 +111,10 @@
 .orbit-lab .button.secondary:hover{background:var(--selected-bg)}
 .orbit-lab dialog .text-button,.orbit-lab .saved-actions button{color:var(--mint)}
 .orbit-lab dialog :is(input:not([type=checkbox]):not([type=radio]),select,textarea){background:var(--input-bg);color:var(--ink);border-color:var(--line);color-scheme:inherit}
+.orbit-lab #design-pincode{background:var(--input-bg);color:var(--ink);border-color:var(--line);caret-color:var(--copper);color-scheme:inherit}
+.orbit-lab #design-pincode::placeholder{color:var(--subtle);opacity:1}
+.orbit-lab #design-pincode:focus{outline:2px solid var(--copper);outline-offset:3px;border-color:var(--copper)}
+.orbit-lab dialog input:-webkit-autofill{-webkit-text-fill-color:var(--ink);box-shadow:0 0 0 1000px var(--input-bg) inset;caret-color:var(--copper)}
 .orbit-lab dialog :is(input,textarea)::placeholder{color:var(--subtle);opacity:1}
 .orbit-lab dialog input[type=checkbox],.orbit-lab dialog input[type=radio]{accent-color:var(--mint)}
 .orbit-lab dialog .check-label{color:var(--ink);font-weight:400}

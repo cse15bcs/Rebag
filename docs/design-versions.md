@@ -2,7 +2,7 @@
 
 All versions belong to the same project at `D:/work/Rebag_`. They use separate page/style files under `public/`; authored templates for generated pages live under `templates/` in the same project. They are not separate repositories or workspaces.
 
-**Selected website:** Design 04 / Orbit Studio, in Indigo Copper. The main `/` route, `/index.html` and `/future-orbit.html` serve the same functional storefront. The standalone preview server uses the same default. Earlier designs remain available in the footer's design archive.
+**Selected website:** Design 04 / Orbit Studio, in Indigo Copper with Metallic Copper as the final default finish. The main `/` route, `/index.html` and `/future-orbit.html` serve the same functional storefront. The standalone preview server uses the same default. Earlier designs remain available in the footer's design archive.
 
 | Version | Browser page | Authored layout and styling | Interaction |
 | --- | --- | --- | --- |
@@ -23,8 +23,8 @@ Ambient effects can be paused, pause while the page is hidden, and respect reduc
 
 ## Website colour study
 
-Open Website atmosphere on Design 04 to compare Midnight Sage, Lunar Pearl, Indigo Copper, Sand Bronze and Arctic Cyan. These change the website background, text, panels, buttons, borders, textures, studio dialogs and orbital lighting; fabric moods remain an independent control. Indigo Copper is the default, with Matte or Metallic Copper finishes available. The fabric preview remains a separate material illustration.
+Open Website atmosphere on Design 04 to compare Midnight Sage, Lunar Pearl, Indigo Copper, Sand Bronze and Arctic Cyan. These change the website background, text, panels, buttons, borders, textures, studio dialogs and orbital lighting; fabric moods remain an independent control. Indigo Copper / Metallic Copper is the final default. Matte remains available as an optional comparison. The fabric preview remains a separate material illustration.
 
 The selected palette is reflected in a shareable query parameter, e.g. `/future-orbit.html?palette=pearl`. Only the five known keys are accepted; an unknown key falls back to Indigo Copper. No palette or customer input is stored in a database or browser wallet. The lighting control and optional detail overlay are visual exploration features. Detail points explain maker-review considerations and do not approve construction or cutting.
 
-The metallic finish adds a static brushed-copper sheen to website buttons, the hero accent text, panel edges and orbital lighting. It does not add metallic fabric, metal hardware or manufacturing options to a bag. Share the metallic website view with `/future-orbit.html?finish=metallic`. Unknown finish values fall back to matte; selecting another palette resets the finish to matte. Neither choice is stored in the wallet or database.
+The metallic finish adds a static brushed-copper sheen to website buttons, the hero accent text, panel edges and orbital lighting. It does not add metallic fabric, metal hardware or manufacturing options to a bag. The normal website URL opens the metallic finish; older `?finish=metallic` links also work. Use `?finish=matte` to compare matte. Unknown finish values use the default metallic finish for Indigo; other palettes use matte. Neither choice is stored in the wallet or database.
