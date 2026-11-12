@@ -1,0 +1,152 @@
+/* Design 04 storefront and shared studio. Palette tokens come from orbit-palettes.css. */
+.orbit-lab{--green:var(--mint);--yellow:var(--selected-bg);--pink:var(--copper)}
+.orbit-lab button{color:inherit}
+.orbit-lab button.primary-button{color:var(--button-ink)}
+.orbit-lab :is(input,select,textarea):focus-visible{outline:2px solid var(--copper);outline-offset:3px}
+.orbit-lab .orbit-header{gap:30px;flex-wrap:wrap;padding-block:22px;min-height:96px}
+.orbit-lab .orbit-header nav{margin-left:auto;font-size:12px;gap:25px}
+.orbit-lab .orbit-header nav a:last-child{border:0;padding:0;border-radius:0}
+.orbit-account-actions{display:flex;align-items:center;gap:20px}
+.orbit-account-actions .text-button{font-size:11px;color:var(--muted);min-height:40px}
+.orbit-account-actions [data-wallet]>span:first-child{color:var(--copper)}
+#saved-count{display:inline-grid;place-items:center;min-width:21px;height:21px;border:1px solid var(--line);border-radius:50%;margin-left:5px;font-size:9px}
+.orbit-account-actions .primary-button{font-size:11px;padding:11px 16px}
+.orbit-lab .account-strip{border-top:0;border-bottom:1px solid var(--line);font-size:10px;padding-block:12px;min-height:45px}
+.orbit-lab .account-strip a{color:var(--mint)}
+.orbit-lab .account-strip .text-button{color:var(--ink);white-space:normal;text-align:right}
+.appearance-drawer{border-bottom:1px solid var(--line)}
+.appearance-drawer>summary{display:flex;justify-content:space-between;gap:20px;cursor:pointer;padding:14px 0;list-style:none;font-size:10px;color:var(--muted)}
+.appearance-drawer>summary::-webkit-details-marker{display:none}
+.appearance-drawer>summary>span{font-size:9px;color:var(--subtle);text-align:right}
+.appearance-drawer .palette-lab{margin:0;padding:18px 0 25px}
+.appearance-drawer .palette-heading h2{font-size:23px}
+.orbit-lab .hero-top{font-size:8px}
+.orbit-lab .orbit-title-row>p{font-size:12px;max-width:280px}
+.orbit-lab .intro-body>p{font-size:12px;line-height:1.8}
+.orbit-lab .intro-body #build-orbit-bag{font-size:11px;margin-bottom:12px;padding:14px}
+.orbit-lab .intro-body #watch-transform{background:transparent;border-color:var(--line);color:var(--ink);font-size:9px}
+.orbit-lab .intro-body>small{font-size:9px;line-height:1.7}
+.orbit-lab input[type=range]{appearance:auto;padding:0;border:0;background:transparent;box-shadow:none;accent-color:var(--mint);border-radius:0;min-height:20px;cursor:ew-resize}
+.orbit-lab #form-progress{height:20px;margin:10px 0}
+.orbit-lab #scene-light{height:20px;margin:7px 0 10px}
+.orbit-lab .floating-controls label{font-weight:400}
+.orbit-lab .floating-controls #future-initials{background:var(--input-bg);border-color:var(--line);color:var(--ink);font-size:12px}
+.orbit-lab .form-control label{font-size:7px;font-weight:400;margin:0}
+.orbit-lab .stage-heading h2{letter-spacing:inherit;line-height:inherit}
+.orbit-lab .lab-foot p{font-size:8px;line-height:1.7}
+.orbit-section{padding-block:85px;border-top:1px solid var(--line)}
+.commerce-heading{display:flex;align-items:end;justify-content:space-between;gap:45px;margin-bottom:35px}
+.commerce-heading h2,.orbit-rewards h2,.orbit-faq h2{font:400 clamp(32px,3.8vw,58px)/1.05 'Space Grotesk',sans-serif;letter-spacing:-2px;margin:16px 0 0}
+.commerce-heading h2 span,.orbit-rewards h2 span,.orbit-faq h2 span{color:var(--subtle)}
+.commerce-heading>p{font-size:13px;color:var(--muted);line-height:1.9;max-width:320px;margin:0}
+.orbit-lab .filters{gap:10px;margin:0 0 24px}
+.orbit-lab .chip{border-color:var(--line);color:var(--muted);font-size:11px;padding:11px 18px}
+.orbit-lab .chip.active{background:var(--selected-bg);color:var(--ink);border-color:var(--mint)}
+.orbit-lab .collection .product-grid{gap:28px;min-height:0;grid-template-columns:repeat(2,minmax(0,1fr))}
+.orbit-lab .product-card{border:1px solid var(--line);border-radius:9px;padding:18px 18px 22px;background:var(--panel-bg);overflow:hidden}
+.orbit-lab .collection .product-art{aspect-ratio:1/.72;background:radial-gradient(ellipse at 50% 55%,rgba(var(--secondary-rgb),.15),transparent 70%),var(--input-bg);border:1px solid var(--line);border-radius:5px;padding:15px}
+.orbit-lab .product-art svg{filter:drop-shadow(0 18px 15px rgba(0,0,0,.2));max-height:380px}
+.orbit-lab .product-label{color:var(--muted);background:var(--surface);border:1px solid var(--line);font-size:8px;letter-spacing:1.3px}
+.orbit-lab .product-arrow{color:var(--ink);background:var(--surface);border:1px solid var(--line);width:38px;height:38px}
+.orbit-lab .collection .product-title{align-items:baseline;margin:22px 0 9px}
+.orbit-lab .collection .product-title h3{font-size:24px;color:var(--ink)}
+.orbit-lab .collection .product-title>span{color:var(--copper);font-size:12px;white-space:nowrap}
+.orbit-lab .collection .product-card>p{font-size:12px}
+.orbit-lab .collection .product-caption{font-size:10px;color:var(--muted);margin-top:13px;line-height:1.8;align-items:baseline}
+.orbit-lab .colour-dot{flex-shrink:0}
+.collection-note{font-size:11px;line-height:1.9;color:var(--muted);margin:24px 0 0;max-width:770px}
+.commerce-routes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.commerce-route{display:flex;align-items:start;flex-direction:column;padding:35px;border:1px solid var(--line);border-radius:9px;background:linear-gradient(135deg,rgba(var(--accent-rgb),.06),transparent 70%),var(--panel-bg)}
+.commerce-route:last-child{background:linear-gradient(135deg,rgba(var(--secondary-rgb),.08),transparent 70%),var(--panel-bg)}
+.route-index{display:flex;justify-content:space-between;width:100%;align-items:center;color:var(--muted);font-size:9px;letter-spacing:1.5px}
+.route-index>span:last-child{font:36px 'Space Grotesk',sans-serif;color:var(--copper);line-height:1}
+.commerce-route h3{font:400 clamp(26px,2.8vw,40px)/1.13 'Space Grotesk',sans-serif;letter-spacing:-1.5px;margin:24px 0 20px}
+.commerce-route>p{font-size:13px;line-height:1.9;color:var(--muted);max-width:440px;flex:1;margin:0 0 25px}
+.commerce-route .primary-button{font-size:11px;min-width:230px}
+.commerce-route>small{font-size:10px;line-height:1.8;color:var(--subtle);margin-top:22px;max-width:430px}
+.process-track{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:30px;padding:10px 0 0;margin:0;counter-reset:none}
+.process-track li{min-width:0;border-top:1px solid var(--line);padding-top:22px}
+.process-track li>span{font:400 30px 'Space Grotesk',sans-serif;color:var(--copper)}
+.process-track h3{font:400 21px 'Space Grotesk',sans-serif;letter-spacing:-.5px;margin:22px 0 13px}
+.process-track p{font-size:12px;line-height:1.9;color:var(--muted);margin:0}
+.fabric-condition{display:flex;align-items:center;gap:22px;padding:25px 0 0;margin-top:38px;border-top:1px solid var(--line)}
+.fabric-condition>span{font-size:35px;color:var(--copper)}
+.fabric-condition p{color:var(--muted);font-size:12px;line-height:1.9;max-width:860px;margin:0}
+.fabric-condition strong{display:block;color:var(--ink);font-weight:500}
+.orbit-rewards{display:flex;align-items:center;gap:45px;padding:45px;border:1px solid var(--line);border-radius:9px;background:radial-gradient(ellipse at 0 50%,rgba(var(--accent-rgb),.11),transparent 60%),var(--panel-bg);margin-block:0 85px}
+.rewards-orbit{width:160px;height:160px;border:1px solid rgba(var(--accent-rgb),.6);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;flex-shrink:0;box-shadow:0 0 0 9px rgba(var(--accent-rgb),.04),0 0 0 18px rgba(var(--secondary-rgb),.025)}
+.rewards-orbit span{font:400 52px 'Space Grotesk',sans-serif;letter-spacing:-3px;color:var(--copper)}
+.rewards-orbit small{font-size:7px;letter-spacing:1px;color:var(--muted);margin-top:7px}
+.orbit-rewards>div:nth-child(2){flex:1}
+.orbit-rewards h2{font-size:38px;letter-spacing:-1.4px}
+.orbit-rewards p{font-size:12px;line-height:1.9;color:var(--muted);max-width:520px}
+.orbit-rewards>div>small{font-size:10px;line-height:1.8;display:block;color:var(--subtle);max-width:530px}
+.orbit-rewards .primary-button{font-size:11px;flex-shrink:0}
+.orbit-faq{display:grid;grid-template-columns:1fr 1.1fr;gap:60px}
+.orbit-faq .faq-list summary{color:var(--ink);font-size:13px;line-height:1.8;padding:21px 25px 21px 0}
+.orbit-faq .faq-list details p{font-size:12px;line-height:1.9;color:var(--muted)}
+.orbit-lab .orbit-end>div{flex-wrap:wrap}
+.orbit-lab .orbit-end .primary-button{font-size:12px}
+.orbit-lab .orbit-end>small{display:block;font-size:11px;color:var(--muted);line-height:1.9;margin:25px auto 0;max-width:550px}
+.orbit-lab .orbit-end [data-instagram]{background:none;border:0;border-bottom:1px solid var(--line);padding:12px 0;color:var(--muted);font-size:11px;opacity:1;cursor:default}
+.orbit-lab .orbit-footer{background:transparent;flex-wrap:wrap;gap:25px}
+.design-archive{margin-left:auto;font-size:10px;color:var(--muted)}
+.design-archive summary{cursor:pointer;padding:8px 0}
+.design-archive a{display:block;font-size:10px;padding:9px 0;text-underline-offset:4px}
+/* Keep the shared functional dialogs visually continuous with Orbit. */
+.orbit-lab dialog{border:1px solid var(--line);border-radius:12px;box-shadow:0 30px 140px #0008;background:var(--paper);color:var(--ink)}
+.orbit-lab dialog::backdrop{background:rgba(4,8,20,.82);backdrop-filter:blur(10px)}
+.orbit-lab .modal-head{border-bottom:1px solid var(--line);padding-block:23px}
+.orbit-lab .modal-head h2{font-size:29px;line-height:1.15;color:var(--ink)}
+.orbit-lab .modal-head .eyebrow{color:var(--copper)}
+.orbit-lab .icon-button{background:var(--surface);color:var(--ink);flex-shrink:0}
+.orbit-lab .studio-progress{padding-top:18px;color:var(--subtle)}
+.orbit-lab .studio-progress .current{color:var(--mint)}
+.orbit-lab .preview-panel{background:radial-gradient(ellipse at 50% 30%,rgba(var(--secondary-rgb),.13),transparent 70%),var(--surface);border-right:1px solid var(--line)}
+.orbit-lab .preview-panel svg{filter:drop-shadow(0 15px 15px #0002)}
+.orbit-lab .preview-route{background:var(--selected-bg);color:var(--muted);border:1px solid var(--line)}
+.orbit-lab .button{background:var(--button-bg);color:var(--button-ink);border-color:var(--button-bg)}
+.orbit-lab .button:hover{background:var(--button-hover);transform:none}
+.orbit-lab .button.secondary{background:transparent;color:var(--ink);border-color:var(--line)}
+.orbit-lab .button.secondary:hover{background:var(--selected-bg)}
+.orbit-lab dialog .text-button,.orbit-lab .saved-actions button{color:var(--mint)}
+.orbit-lab dialog :is(input:not([type=checkbox]):not([type=radio]),select,textarea){background:var(--input-bg);color:var(--ink);border-color:var(--line);color-scheme:inherit}
+.orbit-lab dialog :is(input,textarea)::placeholder{color:var(--subtle);opacity:1}
+.orbit-lab dialog input[type=checkbox],.orbit-lab dialog input[type=radio]{accent-color:var(--mint)}
+.orbit-lab dialog .check-label{color:var(--ink);font-weight:400}
+.orbit-lab dialog .check-label>span{color:var(--muted)}
+.orbit-lab .route-option,.orbit-lab .design-source{background:var(--surface);border-color:var(--line)}
+.orbit-lab .route-option:has(input:checked){background:var(--selected-bg);border-color:var(--mint);box-shadow:0 0 0 1px var(--mint)}
+.orbit-lab .route-option strong{color:var(--ink)}
+.orbit-lab .form-notice,.orbit-lab .points-pending-note,.orbit-lab .review-contact,.orbit-lab .checkout-rewards,.orbit-lab .approval-section,.orbit-lab .checkout-delivery{background:var(--surface);border-color:var(--line);color:var(--muted)}
+.orbit-lab .form-notice strong,.orbit-lab .review-contact>strong{color:var(--ink)}
+.orbit-lab .points-pending-note{border-left-color:var(--copper)}
+.orbit-lab .checkout-rewards h4,.orbit-lab .approval-section h4,.orbit-lab .checkout-delivery h4{color:var(--ink)}
+.orbit-lab .approval-boundary{color:var(--muted);border-color:var(--line)}
+.orbit-lab #approval-receipt{background:var(--selected-bg);border-color:var(--line)}
+.orbit-lab .blueprint-card{background:var(--surface);border-color:var(--line)}
+.orbit-lab .blueprint-expand{color:var(--mint)}
+.orbit-lab .blueprint-card svg,.orbit-lab #review-blueprint svg,.orbit-lab #large-blueprint svg{filter:none}
+.orbit-lab .garment-entry>span,.orbit-lab .delivery-status,.orbit-lab #balance-after{color:var(--mint)}
+.orbit-lab .saved-art,.orbit-lab .wallet-totals>div,.orbit-lab .garment-token{background:var(--surface);border-color:var(--line)}
+.orbit-lab .wallet-totals>div:first-child{background:var(--selected-bg);color:var(--ink);border-color:var(--mint)}
+.orbit-lab .saved-contact button,.orbit-lab .review-contact .button:disabled{background:var(--input-bg);color:var(--subtle);border:1px dashed var(--line);opacity:1}
+.orbit-lab .success-note{background:var(--selected-bg);color:var(--ink);border:1px solid var(--line);border-radius:5px}
+.orbit-lab .demo-review summary,.orbit-lab .approved-record-actions :is(a,button){color:var(--mint)}
+.orbit-lab .review-actions button{background:var(--selected-bg);color:var(--ink);border-color:var(--line)}
+.orbit-lab .review-actions button:last-child{background:transparent;color:var(--copper);border-color:var(--line)}
+.orbit-lab .ledger-entry .credit{color:var(--mint)}
+.orbit-lab .ledger-entry .debit{color:var(--copper)}
+.orbit-lab .swatches{flex-wrap:wrap}
+.orbit-lab #form-error,.orbit-lab #reference-error{color:var(--copper)}
+.orbit-lab .review-row{gap:14px;font-size:11px}
+.orbit-lab .review-row>span{min-width:0;overflow-wrap:anywhere}
+.orbit-lab .studio-bottom{align-items:center}
+.orbit-lab .studio-bottom strong{color:var(--copper)}
+.orbit-lab #toast{background:var(--button-bg);color:var(--button-ink);border:1px solid var(--line)}
+[data-site-palette=indigo][data-site-finish=metallic] .orbit-lab .button:not(.secondary):not(:disabled){background:linear-gradient(115deg,#75482f,#c18b66 30%,#f1c6a0 48%,#a56d48 72%,#dcae85);border-color:#d59d75;color:#21180f}
+@media(min-width:1450px){.orbit-lab .orbit-header{gap:45px}}
+@media(max-width:1100px){.orbit-lab .orbit-header{gap:20px}.orbit-lab .orbit-header nav{gap:16px;font-size:11px}.orbit-account-actions{gap:14px}.orbit-account-actions .primary-button{display:none}.orbit-rewards{gap:30px;padding:35px;flex-wrap:wrap}.orbit-rewards .primary-button{margin-left:190px}.process-track{gap:20px}.process-track h3{font-size:18px}}
+@media(max-width:800px){.orbit-lab .orbit-header{gap:18px;justify-content:space-between;padding-block:18px}.orbit-lab .orbit-header nav{order:3;width:100%;justify-content:space-between;margin:0}.orbit-account-actions{margin-left:auto;gap:18px}.orbit-lab .orbit-header .orbit-logo{font-size:32px}.orbit-lab .account-strip{gap:15px}.orbit-lab .account-strip>span{max-width:65%}.orbit-lab .orbit-title-row>p{font-size:12px}.orbit-section{padding-block:55px}.commerce-heading{align-items:start;gap:25px;flex-direction:column}.commerce-heading>p{max-width:500px}.commerce-route{padding:25px}.commerce-route .primary-button{min-width:0;width:100%;font-size:10px}.commerce-route h3{font-size:29px}.commerce-route>p{font-size:12px}.orbit-lab .collection .product-title{display:block}.orbit-lab .collection .product-title h3{font-size:22px}.orbit-lab .collection .product-title>span{display:block;margin-top:10px}.process-track{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}.process-track h3{font-size:21px}.orbit-rewards{margin-bottom:55px}.orbit-faq{grid-template-columns:1fr;gap:25px}.commerce-heading h2,.orbit-faq h2{font-size:42px}}
+@media(max-width:560px){.orbit-lab .orbit-header{gap:18px}.orbit-account-actions{gap:15px}.orbit-account-actions .text-button{font-size:10px}.orbit-lab .account-strip{font-size:9px;line-height:1.8}.orbit-lab .account-strip .text-button{font-size:9px}.appearance-drawer>summary{font-size:9px;gap:18px}.appearance-drawer>summary>span{font-size:8px;max-width:160px;line-height:1.7}.orbit-lab .hero-top{font-size:6px;letter-spacing:.8px}.orbit-lab .orbit-title-row>p{font-size:11px}.orbit-lab .intro-body>p{font-size:12px;max-width:100%}.orbit-lab .intro-body #build-orbit-bag{max-width:300px;font-size:12px}.orbit-lab .intro-body #watch-transform{max-width:300px}.orbit-lab .intro-body>small{font-size:9px}.commerce-heading{gap:20px;margin-bottom:27px}.commerce-heading h2,.orbit-faq h2{font-size:35px;letter-spacing:-1.5px}.commerce-heading>p{font-size:12px}.orbit-lab .collection .product-grid{grid-template-columns:1fr;gap:22px}.orbit-lab .collection .product-art{aspect-ratio:1/.85}.orbit-lab .collection .product-title{display:flex;gap:15px}.orbit-lab .collection .product-title h3{font-size:21px}.orbit-lab .collection .product-title>span{font-size:11px;margin:0}.orbit-lab .collection .product-caption{font-size:10px}.orbit-lab .product-label{font-size:7px}.collection-note{font-size:10px}.commerce-routes{grid-template-columns:1fr;gap:20px}.commerce-route{padding:25px}.commerce-route h3{font-size:33px}.commerce-route .primary-button{font-size:12px;width:auto}.commerce-route>small{font-size:10px}.process-track{gap:28px 20px}.process-track h3{font-size:19px;line-height:1.3}.process-track p{font-size:11px}.fabric-condition{align-items:start;gap:15px}.fabric-condition p{font-size:11px}.orbit-rewards{padding:27px;gap:28px;flex-direction:column;align-items:start}.rewards-orbit{width:110px;height:110px}.rewards-orbit span{font-size:40px}.rewards-orbit small{font-size:6px}.orbit-rewards h2{font-size:34px}.orbit-rewards .primary-button{margin:0}.orbit-lab .orbit-footer>small{font-size:8px}.orbit-lab .orbit-footer>span{font-size:9px;max-width:none}.design-archive{margin-left:0;width:100%}.orbit-lab .modal-head h2{font-size:25px}.orbit-lab .studio-progress{font-size:9px}.orbit-lab .preview-panel{border-right:0;border-bottom:1px solid var(--line)}.orbit-lab .wallet-totals{grid-template-columns:1fr}.orbit-lab .wallet-totals>div{display:grid;grid-template-columns:1fr auto;gap:4px 15px;padding:16px}.orbit-lab .wallet-totals small{font-size:10px;min-height:0}.orbit-lab .wallet-totals strong{font-size:29px;grid-column:2;grid-row:1/3;margin:0;align-self:center}.orbit-lab .wallet-totals p{font-size:9px}.orbit-lab .saved-make{grid-template-columns:1fr;gap:16px}.orbit-lab .saved-art{width:120px}.orbit-lab .review-row{font-size:10px}.orbit-lab .studio-bottom{flex-wrap:wrap}}
+@media(max-width:360px){.orbit-lab .orbit-header .orbit-logo{font-size:28px}.orbit-account-actions{gap:12px}.orbit-lab .orbit-header nav{font-size:10px}.orbit-lab .collection .product-title{display:block}.orbit-lab .collection .product-title>span{margin-top:8px}.commerce-route{padding:22px}.commerce-route h3{font-size:29px}.commerce-route .primary-button{font-size:11px;width:100%}.process-track{grid-template-columns:1fr}.orbit-lab .hero-top>span{max-width:135px;line-height:1.8}.orbit-lab .hero-top>button{font-size:7px;padding:8px}.orbit-lab .studio-progress{font-size:8px}}

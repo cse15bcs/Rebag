@@ -4,7 +4,8 @@ import {validateOutline} from './reference-outline.mjs';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let draftId=crypto.randomUUID(),requestKey=crypto.randomUUID(),approved=null,session=null,busy=false,referenceURL=null,refreshTimer,editRevision=0;
-const approvalReturnPath=encodeURIComponent(location.pathname==='/design-two.html'?'/design-two.html':'/design-one.html');
+const approvalPages=['/','/index.html','/future-orbit.html','/design-one.html','/design-two.html'];
+const approvalReturnPath=encodeURIComponent(approvalPages.includes(location.pathname)?location.pathname:'/');
 const hashes=new WeakMap(),history=new Map();let referenceEditor;
 function raw(preview=false){const route=$('input[name=route]:checked')?.value||'',source=$('input[name=design-source]:checked')?.value||'shape';return {
  source,route:preview&&!route?'own-fabric':route,shape:source==='reference'?'reference':$('#bag-shape').value,colour:source==='reference'?'reference':$('input[name=colour]:checked')?.value,

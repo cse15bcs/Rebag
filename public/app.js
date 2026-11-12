@@ -97,10 +97,20 @@ function downloadMake(id,format='text'){
 }
 async function copyMake(id){const b=makeBrief(id);if(!b)return;try{await navigator.clipboard.writeText(D.text(b));toast('Enquiry text copied. No message has been sent.');}catch{toast('Clipboard is unavailable. Use Download brief (.txt) instead.');}}
 function configureContact(){const url=D.instagramURL(globalThis.RebagConfig?.instagramUrl);$$('[data-instagram]').forEach(button=>{button.disabled=!url;button.textContent=url?'Chat with us on Instagram ↗':'Instagram enquiries coming soon';});$('#contact-note').textContent=url?'Opens our Instagram profile. Choose what you would like to share; your design is not automatically sent.':'Our Instagram handle is being prepared. Design approvals can still be submitted here.';}
-$('#hero-bag-one').innerHTML=bagSVG('tote','denim','plain');$('#hero-bag-two').innerHTML=bagSVG('mini','rose','patch');$('#banner-bag').innerHTML=bagSVG('tote','butter','patch','YOU');
+for(const [selector,args] of [['#hero-bag-one',['tote','denim','plain']],['#hero-bag-two',['mini','rose','patch']],['#banner-bag',['tote','butter','patch','YOU']]]){const art=$(selector);if(art)art.innerHTML=bagSVG(...args);}
 $('#bag-shape').innerHTML=bags.filter(b=>b.active!==false).map(b=>`<option value="${b.id}">${b.name} · sample ${money(b.price)}</option>`).join('');
 $('#swatches').innerHTML=colours.map((c,i)=>`<label class="swatch" title="${c.name}"><input type="radio" name="colour" value="${c.id}" aria-label="${c.name}" ${i===0?'checked':''}><span style="--swatch:${c.hex}"></span></label>`).join('');
 renderProducts();updateCount();configureContact();
+// Carry the interactive Orbit concept into the shared design flow.
+$('#build-orbit-bag')?.addEventListener('click',()=>{
+ const shape=$('[data-future-shape][aria-pressed="true"]')?.dataset.futureShape;
+ startDesign(shape==='mini'?'mini':'tote');
+ const mood=$('[data-fabric][aria-pressed="true"]')?.dataset.fabric;
+ if(colours.some(colour=>colour.id===mood)){selectedColour=mood;$(`input[name=colour][value="${mood}"]`).checked=true;}
+ else if(mood==='copper')$('#design-notes').value='I liked the Copper fabric mood in the concept. Please discuss a suitable material and colour with me.';
+ $('#initials').value=($('#future-initials')?.value||'').replace(/[^a-z]/gi,'').toUpperCase().slice(0,3);
+ updatePreview();
+});
 document.addEventListener('click',e=>{
  const start=e.target.closest('[data-start]'),bag=e.target.closest('[data-bag]'),routeStart=e.target.closest('[data-route-start]'),close=e.target.closest('[data-close]'),filter=e.target.closest('[data-filter]'),download=e.target.closest('[data-download]'),remove=e.target.closest('[data-remove]'),wallet=e.target.closest('[data-wallet]'),review=e.target.closest('[data-review]'),copy=e.target.closest('[data-copy]'),instagram=e.target.closest('[data-instagram]');
  if(start)startDesign();if(bag)startDesign(bag.dataset.bag);if(close)closeDialog(close.dataset.close);

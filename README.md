@@ -3,11 +3,11 @@ same soul. new silhouette
 
 ## Full-stack design studio
 
-The selected home design is Orbit Studio (Design 04). Both `/` and `/index.html` open it; the original full prototype is at `/design-one.html` and the Atelier version is at `/design-two.html`. See [the design versions](docs/design-versions.md).
+The selected home design is Orbit Studio (Design 04), in Indigo Copper. Both `/` and `/index.html` open the functional storefront: collection, own-fabric/contribution routes, design studio, blueprints, approvals, local drafts, demo rewards and checkout breakdown. Colour and matte/metallic finish options live in the Website atmosphere drawer. The earlier versions remain at `/design-one.html` and `/design-two.html`. See [the design versions](docs/design-versions.md).
 
 The authored storefront is in `public/`. `dist/` is generated deployment output; do not edit it.
 
-Run `npm run dev` (PowerShell: `npm.cmd run dev`) and open the printed local URL. The portable Sites starter supports local test sign-in through `/signin-with-chatgpt?return_to=/design-one.html`. Hosted authentication remains owned by Sites.
+Run `npm run dev` (PowerShell: `npm.cmd run dev`) and open the printed local URL. The portable Sites starter supports local test sign-in through `/signin-with-chatgpt?return_to=/`. Hosted authentication remains owned by Sites.
 
 Design approvals use D1 (`DB`) and private reference/fabric images use R2 (`BUCKET`). See [the design approval workflow](docs/design-approval-workflow.md) for setup, local migrations, approval scope and verification.
 
