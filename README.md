@@ -1,6 +1,10 @@
 # Rebag
 same soul. new silhouette
 
+## Local UPI Gateway evaluation
+
+The separately installed mynkdev-21 UPI Gateway is available for local Sandbox testing. See [local gateway setup and test instructions](docs/upi-gateway-local.md). Start it with `node scripts/upi-gateway-local.mjs start` and generate a checkout with `node scripts/upi-gateway-local.mjs create-test`. This runs alongside the earlier YouPI test lab; it does not collect real payments for website orders.
+
 ## Full-stack design studio
 
 The selected home design is Orbit Studio (Design 04), in Indigo Copper. Both `/` and `/index.html` open the functional storefront: collection, own-fabric/contribution routes, design studio, blueprints, approvals, local drafts, demo rewards and checkout breakdown. Colour and matte/metallic finish options live in the Website atmosphere drawer. The earlier versions remain at `/design-one.html` and `/design-two.html`. See [the design versions](docs/design-versions.md).

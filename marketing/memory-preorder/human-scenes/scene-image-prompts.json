@@ -1,0 +1,87 @@
+{
+  "generator": "built-in image_gen",
+  "purpose": "AI-generated illustrative stills for REBAG human-loved-one keepsake handbag concept",
+  "dimensions": {
+    "width": 941,
+    "height": 1672,
+    "note": "Native generated dimensions, approximately 9:16. Fit to a 1080 x 1920 vertical editing timeline."
+  },
+  "scenes": [
+    {
+      "id": "01-shirt",
+      "file": "01-shirt.png",
+      "start_seconds": 0,
+      "end_seconds": 5,
+      "reference_images": [],
+      "prompt": "Use case: ads-marketing. Asset type: scene 1 reference still for a 30-second REBAG human-loved-one keepsake handbag film. Generate ONE cinematic photorealistic image, portrait vertical 9:16, preferably 1080x1920, no collage or borders. Scene: a much-loved PALE BLUE plain cotton button-front shirt is neatly draped over the back of a warm oak chair beside a sunny window on frame left in a quiet lived-in Indian home. The collar, worn cuff, front placket and soft real cotton weave are recognizable. Hero detail: ONE round CREAM FOUR-HOLE BUTTON, about 12mm diameter, sewn in a square hole arrangement with pale blue thread, clearly visible on the upper front placket; other fasteners are hidden in natural folds so this single familiar button is the focus. The pale blue shirt has no prints, embroidery, chest logos or contrasting fabric. Compose a close-to-medium still life that shows the garment and the cream button clearly, chair filling lower two thirds, quiet warm ivory wall above. The shirt falls naturally with plausible folds and real seams. In the far background an indistinct small framed family photograph sits on an oak side table, too soft to identify individual faces. Warm late-afternoon window light, linen curtains, soft sage room accent, warm ivory and natural wood, gentle shadows, tactile natural fibres, understated documentary 50mm photography, subtle grain, no theatrical sadness. The shirt belonged to a deceased human loved one; communicate remembrance through the object only. No person or animal in foreground, no ghosts, death scenes, graves, funerals, candles, distress, text, watermarks, logos, illustration, unreal fabric or duplicate hero buttons. This image will anchor exact shirt-colour, button and room continuity in later scenes.",
+      "source_image": "C:/Users/TUSHAR/.codex/generated_images/01a1a749-3688-7862-905d-c329f8ca7fef/exec-bca32345-14e0-46c8-8a58-dc9c31154113.png"
+    },
+    {
+      "id": "02-remembrance",
+      "file": "02-remembrance.png",
+      "start_seconds": 5,
+      "end_seconds": 10,
+      "reference_images": [
+        "01-shirt.png"
+      ],
+      "prompt": "Use case: ads-marketing. Asset type: scene 2 remembrance still for REBAG human-loved-one film, ONE photorealistic vertical 9:16 image. Input image 1 is the EXACT shirt, cream button and room reference, not an edit target. New wider view of the SAME warm lived-in Indian room, left-side wood-framed window, beige linen curtain, warm ivory wall, oak chair, sage vase and small blurred family photograph on oak table in back right. A fictional adult Indian woman in her late thirties, medium-brown skin, dark brown eyes, oval face and dark hair tied in a low loose bun, wearing a simple unembroidered ivory cotton kurta and muted sage trousers, sits beside the chair. She gently holds the SAME PALE BLUE SHIRT partly in her lap, partly draped over the chair. Both anatomically natural hands cradle the familiar front placket; one thumb rests beside, without obscuring, the SAME SINGLE ROUND CREAM FOUR-HOLE BUTTON sewn with pale blue thread. Match exact shirt shade, weave, placket seams, button size and four-hole square arrangement from the reference; this is not a cuff button or a decorative brooch. Medium portrait framing shows her face looking quietly down toward the cloth, both hands and clearly readable cream button, shirt and oak chair, with room context. Her expression is gentle reflective remembrance, neutral-soft mouth, no staged smile, tears or grief performance. Soft warm afternoon light from left, realistic documentary 50mm cinematography, tactile cotton, modest shallow depth of field and subtle grain. Keep the button visually identifiable. No live second person, animals, bandana, terracotta patch, shrine, candle, funeral, death scene, ghost, rainbow symbolism, text, logos, watermark, collage, extra hands, distorted fingers, changing shirt colour or extra hero buttons.",
+      "source_image": "C:/Users/TUSHAR/.codex/generated_images/01a1a749-3688-7862-905d-c329f8ca7fef/exec-d886080b-f2e2-436e-be9e-69b11e6530f6.png"
+    },
+    {
+      "id": "03a-placement",
+      "file": "03a-placement.png",
+      "start_seconds": 10,
+      "end_seconds": 13,
+      "reference_images": [
+        "01-shirt.png"
+      ],
+      "prompt": "Use case: ads-marketing. Asset type: scene 3A careful placement still for REBAG human-loved-one film, ONE photorealistic vertical 9:16 image. Input image 1 is the exact PALE BLUE SHIRT, cotton texture, front placket and CREAM FOUR-HOLE BUTTON reference. A new scene on an oak craft workbench beside a sunlit window: a craftsperson's two realistic medium-brown hands gently position a SHORT PRESERVED VERTICAL SECTION OF THE SHIRT'S ORIGINAL PLACKET on the upper centre front of a nearly finished PALE BLUE COTTON HANDBAG. Keep the ORIGINAL ROUND CREAM FOUR-HOLE BUTTON sewn on that strip, matching the reference shape, four holes arranged in a square, pale blue thread and lightly worn finish. Establish the finished bag: softly structured rectangular everyday handbag 32cm wide and 27cm tall, boxed flat base about 8cm deep, shirt fabric outer shell with plain ivory supporting cotton and lining, TWO broad matching pale blue cotton handles, simple practical seams, no hardware, leather or added decoration. The preserved strip is about 4cm wide and 8cm long, made of the SAME pale blue fabric with the original parallel placket stitches, centred on the upper front below the top rim; ONE original cream button sits on its upper half. It is a small meaningful detail, not a giant central decorative button or fastener. The bag lies flat front-up with both handles visible above it. Both maker hands lightly hold the strip's edges for placement, not the button. One spool of ivory thread and a slim sewing needle lie unobtrusively beside the bag. Medium elevated close-up showing the whole bag and handles, warm oak, tactile authentic cotton, precise seams, quiet documentary craft cinematography, natural window light and subtle grain, original warm ivory and pale blue palette. No intact shirt draped on the completed bag, cutting, animals, paw prints, terracotta panel, extra buttons, extra handles, text, logos, watermark, collage, surreal transformation, inaccurate hand anatomy or unprompted decorations.",
+      "source_image": "C:/Users/TUSHAR/.codex/generated_images/01a1a749-3688-7862-905d-c329f8ca7fef/exec-5e1d8c21-e274-42ab-aa0b-a555f7a18a4c.png"
+    },
+    {
+      "id": "03b-stitching",
+      "file": "03b-stitching.png",
+      "start_seconds": 13,
+      "end_seconds": 16,
+      "reference_images": [
+        "03a-placement.png"
+      ],
+      "prompt": "Use case: ads-marketing. Asset type: scene 3B stitch-detail insert for REBAG human-loved-one film, ONE photorealistic vertical 9:16 cinematic image. Input image 1 is the EXACT bag, button, placket strip, hands and workbench reference. Create a tighter NEW macro shot of the SAME pale blue cotton handbag lying on the SAME oak workbench in warm natural light. The SAME small vertical preserved shirt-placket section remains on the upper centre front, matching its rectangular shape, width, length, blue colour, existing two parallel stitch lines and location relative to the top edge. Its ONE original round cream FOUR-HOLE BUTTON sewn with pale blue thread remains unchanged and clearly visible above the maker's hands. The image centres on one careful stitch at the LOWER CORNER of the preserved placket section, attaching the section to the bag, NOT sewing through or replacing the button. A realistic medium-brown right hand pinches a slim needle between thumb and index finger at the lower corner seam; a short length of ivory thread follows naturally. The left hand steadies the cloth. Show anatomically accurate natural hands, no floating needle. Enough of the top bag edge, ivory lining and two pale blue handles is visible softly behind to identify the same design. Tactile woven fabric, slightly worn shirt fibres, practical seams, quiet macro documentary cinematography, subtle grain, warm ivory/pale blue/oak palette. No extra buttons, new decorations, prints, contrasting patch, animals, face, text, logo, watermark, collage, borders, cutting, morphing, thread tangles, wrong button colour or extra fingers.",
+      "source_image": "C:/Users/TUSHAR/.codex/generated_images/01a1a749-3688-7862-905d-c329f8ca7fef/exec-d4e75988-c532-4a2c-80d5-34df79cc27c7.png"
+    },
+    {
+      "id": "04-reveal",
+      "file": "04-reveal.png",
+      "start_seconds": 16,
+      "end_seconds": 21,
+      "reference_images": [
+        "02-remembrance.png",
+        "03a-placement.png"
+      ],
+      "prompt": "Use case: ads-marketing. Asset type: scene 4 finished-bag reveal still for REBAG human-loved-one film, ONE photorealistic cinematic vertical 9:16 image. Input image 1 supplies the EXACT woman's face, low loose dark bun, ivory cotton kurta, sage trousers, oak chair and warm room. Input image 2 supplies the EXACT pale blue handbag design. New shot in the SAME room: the same adult woman gently lifts the finished handbag with her right hand holding BOTH pale blue fabric handles together, while the fingertips of her left hand rest lightly on the bag near, but not covering, the preserved cream button. Frame a medium portrait from her full head to below the bag: her natural face looking quietly toward the bag, both hands, the complete bag and both handles clearly visible. Her expression is calm and reflective with just a small natural softness at the mouth; no broad grin or implication that grief is resolved. Bag stays physically identical to input image 2: plain pale blue shirt-cotton outer, ivory lining, softly structured rectangle about 32cm by 27cm, boxed base, TWO matching broad blue handles, a small vertically oriented original blue placket strip on the upper CENTRE front, retaining the SAME single round CREAM FOUR-HOLE BUTTON with pale blue thread near its upper half, same parallel placket stitching. Preserve button size relative to bag. No extra buttons, fasteners, decorative patches, collar or sleeves on bag. Same warm window light from frame left, linen curtain, oak chair and softly blurred family photograph in background, tactile fabric, documentary 50mm cinematography, realistic hands and modest depth of field, subtle grain, warm ivory/pale blue/sage/oak palette. No animals, terracotta, paw prints, text, logos, watermark, extra people, distorted limbs, extra handles, glossy leather, magical change or theatrical grieving.",
+      "source_image": "C:/Users/TUSHAR/.codex/generated_images/01a1a749-3688-7862-905d-c329f8ca7fef/exec-e6e066bb-9cea-4d3b-83e6-58f4a741a5c9.png"
+    },
+    {
+      "id": "05-walk",
+      "file": "05-walk.png",
+      "start_seconds": 21,
+      "end_seconds": 25,
+      "reference_images": [
+        "02-remembrance.png",
+        "04-reveal.png"
+      ],
+      "prompt": "Use case: ads-marketing. Asset type: scene 5 ordinary afternoon walk still for REBAG human-loved-one film, ONE photorealistic cinematic vertical 9:16 image. Input image 1 is the EXACT woman and wardrobe reference. Input image 2 is the EXACT finished pale blue handbag reference. A NEW outdoor shot of the SAME fictional Indian woman in her late thirties, medium-brown skin, same oval face and dark brown eyes, same dark hair in a low loose bun, SAME simple ivory cotton kurta and muted sage trousers, walking at an easy natural pace on a quiet tree-lined residential lane in warm afternoon light. She carries the SAME pale blue cotton handbag at thigh level in her right hand by BOTH matching broad blue handles, front facing camera. Include her full head to feet and entire bag clearly inside frame; medium-full documentary portrait. Her free hand is relaxed. A small reflective softness in her expression, unposed and ordinary, not a triumphant grin. Preserve bag proportions relative to her body: softly structured everyday rectangle about 32cm wide and 27cm tall, flat boxed base, plain pale blue shirt-cotton outer, ivory lining, TWO broad pale blue handles, small preserved vertical blue placket section on upper CENTRE front, ONE same round cream FOUR-HOLE button on its upper half, same stitching and relative button size as image 2. Keep the same fabric shade, no added embroidery, straps, patchwork, leather or metal. Quiet background of softly blurred leafy trees and warm ivory houses, gentle dappled light, natural colours, tactile cotton, realistic anatomy and gait, 50mm documentary cinematography, subtle grain. No extra person or animal, terracotta, paw prints, ghost, funeral imagery, death scene, tears, healing symbolism, text, logos, watermark, collage, changing clothes, extra handles, duplicate buttons or distorted hands.",
+      "source_image": "C:/Users/TUSHAR/.codex/generated_images/01a1a749-3688-7862-905d-c329f8ca7fef/exec-ec052bc8-c557-4a1e-9d88-046c6de142a5.png"
+    },
+    {
+      "id": "06-end-card",
+      "file": "06-end-card.png",
+      "start_seconds": 25,
+      "end_seconds": 30,
+      "reference_images": [],
+      "prompt": "Use case: ads-marketing. Asset type: final static REBAG end card for a 30-second HUMAN loved-one keepsake handbag film. Create ONE high-resolution portrait vertical 9:16 flat graphic image, ideally 1080x1920. Clean uniform warm ivory matte background about #F7F2E8, deep forest-green type about #203C30. A refined restrained centred typographic arrangement with generous negative space and at least 12 percent safe margins. Place the full group around vertical centre. Exact English text ONLY, verbatim: large elegant serif uppercase wordmark 'REBAG' (R E B A G), then below it smaller highly legible elegant type 'Made from memories.' on one line and 'Carried with love.' on the next line. Leave a generous gap before the call to action 'Message us about pre-orders' in smaller legible type on one line or two balanced lines; there is NO final period on this CTA. All lettering must be accurate. Wordmark largest, tagline medium, CTA slightly smaller, clear hierarchy and comfortable line spacing. Warm respectful independent craft brand. Do not include the pet tagline. No quotation marks in the final image, no pictorial logo, paw icon, button icon, photos, fabric, border, texture, gradient, watermark, price, deadline, URL, testimonial, extra words or punctuation. This is a finished flat title card, not a mockup on a screen or wall.",
+      "source_image": "C:/Users/TUSHAR/.codex/generated_images/01a1a749-3688-7862-905d-c329f8ca7fef/exec-95d05a94-73e8-4467-b1aa-0947a53fb674.png"
+    }
+  ]
+}
+

@@ -1,0 +1,73 @@
+{
+  "generator": "built-in image_gen",
+  "purpose": "AI-generated illustrative scene stills for REBAG pet keepsake concept film",
+  "dimensions": {
+    "width": 941,
+    "height": 1672,
+    "note": "Native generated dimensions, approximately 9:16. Fit to a 1080 x 1920 vertical editing timeline."
+  },
+  "scenes": [
+    {
+      "id": "01-memory",
+      "prompt": "Use case: ads-marketing. Asset type: scene 1 reference still for a 30-second REBAG keepsake-handbag film. Generate ONE cinematic photorealistic image, vertical 9:16, ideally 1080x1920, no borders, no collage. A naturally observed affectionate memory in a quiet lived-in Indian home: an adult Indian woman in her early thirties with medium-brown skin, dark brown eyes, dark hair loosely tied back, wearing a plain ivory cotton long-sleeved blouse and sage trousers, sits on a pale linen sofa beside a sunny window on frame left. Her beloved golden-brown medium-sized dog with soft floppy ears, a short golden coat and no markings rests its head gently on her knee. Her right hand lightly strokes its head. The dog is relaxed and loved, no open-mouth exaggerated smile. It wears a clearly visible muted terracotta cotton triangular bandana with a DISTINCTIVE SIMPLE CREAM PAW PRINT PATTERN: identical evenly spaced cream paw silhouettes, each one rounded pad and four small oval toes, no lettering, no bones, no spots. Bandana has a tidy narrow stitched hem and recognizable visible front-facing paw prints. Compose a medium shot to show the woman's natural face, both hands, the dog's head and complete bandana clearly. Warm ivory plaster walls, oak side table on frame right, sheer linen curtains, soft afternoon window light, tactile cotton, subtle film grain, realistic 50mm cinematic photography, restrained intimate warmth. This is the memory scene, no supernatural cues. Keep all main subjects comfortably inside the central 80 percent of the frame for vertical editing. No text, logos, watermarks, collars with lettering, distress, crying, graves, rainbow bridges, funeral imagery, distorted hands, extra limbs, cartoon style, or illustrated look. Maintain realistic proportions and unposed documentary feeling.",
+      "file": "01-memory.png",
+      "reference_images": [],
+      "source_image": "C:/Users/TUSHAR/.codex/generated_images/01a1a749-3688-7862-905d-c329f8ca7fef/exec-b81605f5-af36-4345-beb2-c112f1bf159b.png"
+    },
+    {
+      "id": "02-bandana",
+      "prompt": "Use case: ads-marketing. Asset type: scene 2, present-day remembrance, ONE vertical 9:16 photorealistic cinematic still, same resolution/aspect as reference. Input image 1 is the identity, room, light, clothing and exact bandana reference, not an edit target. Create a NEW SHOT of the SAME adult Indian woman, SAME face and loosely tied dark hair, SAME ivory blouse and sage trousers, seated on the SAME pale linen sofa in the SAME warm room beside the left-side sunny window with linen curtain and oak side table on the right. The present-day dog is absent. The woman holds the SAME muted terracotta triangular cotton bandana gently across her lap with both hands. Match the exact cream paw-print motif from the reference: each paw has one pad and four oval toes, same scale, orientation and staggered spacing, narrow cream stitched hem. Her thumb rests beside a clearly visible cream paw print, not covering it. A small simple framed photograph of the SAME golden-brown floppy-eared dog wearing that bandana sits visibly on the nearby oak side table, recognizable but secondary. Medium close portrait framing includes her natural face looking down, hands and the entire spread bandana, and photo at frame right. Quiet, affectionate reflection with a relaxed expression, no tears or performed grief. Warm natural light, tactile worn cotton, subtle realistic film grain, documentary 50mm cinematography. Do not add a second adult or live dog. No text, logos, watermarks, candles, funerals, grave imagery, ghosts, distress, cartoon style, extra hands, distorted fingers, duplicate bandanas, changed motif, or inconsistent room. The bandana must look like exactly the item the dog wore in the reference.",
+      "file": "02-bandana.png",
+      "reference_images": [
+        "01-memory.png"
+      ],
+      "source_image": "C:/Users/TUSHAR/.codex/generated_images/01a1a749-3688-7862-905d-c329f8ca7fef/exec-fb40b8ae-0ac6-469a-9c2e-753ed849f6c6.png"
+    },
+    {
+      "id": "03a-placement",
+      "prompt": "Use case: ads-marketing. Asset type: scene 3A, careful placement at a maker's table for REBAG, ONE cinematic photorealistic vertical 9:16 still. Input image 1 is the EXACT fabric reference: use the same terracotta triangular bandana held by the woman, preserving the cream paw shapes, cream colour, scale, orientation and staggered spacing, worn cotton weave and narrow stitched hem. New scene: slightly elevated close view of an oak craft workbench in warm window light. A craftsperson's two anatomically correct medium-brown hands carefully position a recognizable downward-pointing triangular section of that bandana as an applique on the centre front of a handmade SAGE COTTON HANDBAG. Establish bag design for later shots: softly structured rectangular everyday handbag about 32 cm wide, 27 cm tall, flat boxed bottom about 8 cm deep, muted sage canvas outer, ivory lining, TWO broad matching sage fabric handles, no hardware, no leather, no logos. The terracotta triangular panel is centred on the front, approximately 22cm wide and 17cm high, point facing down, retaining its original pale stitched edging and a recognizable cluster of cream paw prints. No new pattern or decorative motif. The bag is nearly assembled, lying flat front-up on table, handles toward the top, so placement is practical and clear. Both hands hold the panel edges; do not show cutting an irreplaceable keepsake. A plain spool of ivory cotton thread and simple needle rest unobtrusively beside it. Compose hands and whole bag with handles visible, quiet workbench space above, tactile realistic seams, intimate documentary photographic craft detail, original warm ivory/terracotta/sage/oak palette and understated gentle care. No woman face, animal, dog photograph, text, watermark, collage, magical transformation, sewing-machine glitches, extra fingers, extra handles, glossy luxury styling or distress. This is a separate maker shot, not the seated memory scene.",
+      "file": "03a-placement.png",
+      "reference_images": [
+        "02-bandana.png"
+      ],
+      "source_image": "C:/Users/TUSHAR/.codex/generated_images/01a1a749-3688-7862-905d-c329f8ca7fef/exec-b9aadc84-aea4-4fe7-bf2a-c5e72f43a47d.png"
+    },
+    {
+      "id": "03b-stitching",
+      "prompt": "Use case: ads-marketing. Asset type: scene 3B stitching insert for REBAG, ONE vertical 9:16 photorealistic cinematic still. Input image 1 is the exact bag, fabric layout, hands, workbench and colour reference. Generate a closer insert shot of the SAME sage cotton handbag lying on the SAME oak workbench in the SAME warm window light. The SAME terracotta downward-pointing triangular bandana panel stays in exactly the same placement on the front. PRESERVE the reference paw-print layout precisely: nine cream paw motifs in their existing positions and orientations, matching original four rounded toes and one pad, and the original hem. Do not repaint, add, remove, shrink or rearrange motifs. Show one anatomically correct craftsperson hand stabilizing the lower sage cloth, while the other guides a slim sewing needle through the cream-edged bottom tip of the terracotta triangle. A short realistic length of cream thread emerges from the seam. The needle must be visibly pinched between fingers, not floating. Frame mainly panel, seam, two natural hands and enough sage bag to identify it; the upper sage handles may fall softly out of focus. The shot records a small careful stitch, not cutting. Macro craft documentary realism, real woven fibres, soft depth of field, naturally lit, warm ivory/muted terracotta/sage/oak, no glamour sheen. No text, logos, watermarks, extra tools, extra fingers, impossible stitching, changed design, animals, faces, dramatic effects, collage or border.",
+      "file": "03b-stitching.png",
+      "reference_images": [
+        "03a-placement.png"
+      ],
+      "source_image": "C:/Users/TUSHAR/.codex/generated_images/01a1a749-3688-7862-905d-c329f8ca7fef/exec-0a665910-c012-4e73-bfc7-1a40808a9685.png"
+    },
+    {
+      "id": "04a-reveal",
+      "prompt": "Use case: ads-marketing. Asset type: scene 4A finished-bag reveal for REBAG, ONE vertical 9:16 photorealistic cinematic still. Input image 1 supplies the EXACT adult woman's identity, face, dark loosely tied hair, ivory blouse, sage trousers, pale linen sofa and sunny room. Input image 2 supplies the EXACT finished bag design; do not blend the woman into the maker's hands or invent a different bag. New shot: the same woman in the same softly sunlit room has just lifted the finished sage cotton handbag from the oak table. Frame from her upper chest to knees, with just the lower part of her face if natural, placing the WHOLE bag and TWO broad sage handles clearly at the centre. Her right hand holds both handles securely; her relaxed left fingertips rest briefly against one cream paw print on the terracotta bandana panel, without hiding most of it. The bag front faces camera and is the same 32cm-wide softly structured sage cotton everyday handbag with ivory lining and flat boxed base. Preserve the exact downward-pointing terracotta triangular panel from input image 2: same size relative to bag, narrow pale stitched hem, NINE cream paw motifs in the SAME positions and orientations (four along upper area, three in middle, two lower), each pad plus four toes, unchanged colours and weaving. Preserve broad sage handle proportions and no hardware. Soft afternoon light from the window on the left, tactile cloth, warm ivory and natural wood background, intimate documentary 50mm product detail, realistic depth of field, understated warmth. No live dog, no ghost, no extra people, no text, watermarks or logos, no altered print, extra fingers, extra handles, chain straps, glossy leather, collage or grief performance.",
+      "file": "04a-reveal.png",
+      "reference_images": [
+        "01-memory.png",
+        "03a-placement.png"
+      ],
+      "source_image": "C:/Users/TUSHAR/.codex/generated_images/01a1a749-3688-7862-905d-c329f8ca7fef/exec-f1b5b0f8-3e2e-4568-a464-c5f3e9b283c7.png"
+    },
+    {
+      "id": "04b-walk",
+      "prompt": "Use case: ads-marketing. Asset type: scene 4B ordinary afternoon walk for REBAG, ONE photorealistic cinematic vertical 9:16 still. Input image 1 is the exact adult woman identity and wardrobe reference; input image 2 is the exact finished handbag reference. New scene outdoors: the SAME Indian woman with medium brown skin, dark brown eyes and loosely tied dark hair, SAME plain ivory long-sleeve cotton blouse and sage trousers, walks naturally at an easy pace on a quiet tree-lined residential path on an ordinary warm afternoon. Her face is clearly recognizable as the woman from image 1, a small reflective smile, no broad advertising grin. She carries the SAME sage cotton handbag by both broad fabric handles in her right hand at thigh level with the front panel turned toward camera. Show her from head to mid-calf, and keep the WHOLE bag unobscured and clearly legible in frame. Bag invariant: softly structured sage cotton rectangular handbag, ivory lining, flat boxed base, two broad sage handles, centred terracotta downward-pointing triangular bandana panel with pale stitched hem and EXACT SAME NINE cream paw-print motifs as image 2, four across the upper area, three middle, two lower. Do not add, remove or change the motifs, turn them into flowers or scale the patch differently. Handbag should remain handbag-sized relative to her body, practical and personal. Natural relaxed gait and realistic hands, gentle dappled afternoon light, warm muted palette, quiet greenery and ivory houses softly out of focus, premium independent craft documentary still, restrained 50mm cinematography, subtle grain. No other person or live animal, no ghosts or rainbow symbolism, no grief cure implication, no dramatic triumph pose, no text, logos, watermarks, collage, border, extra handles, extra fingers, glamorous luxury styling, harsh orange grading, or changing clothes.",
+      "file": "04b-walk.png",
+      "reference_images": [
+        "01-memory.png",
+        "04a-reveal.png"
+      ],
+      "source_image": "C:/Users/TUSHAR/.codex/generated_images/01a1a749-3688-7862-905d-c329f8ca7fef/exec-2e605f53-090d-49dc-a6be-a2fe422f25bc.png"
+    },
+    {
+      "id": "05-end-card",
+      "prompt": "Use case: ads-marketing. Asset type: final static REBAG end-card still for a 30-second vertical cinematic keepsake-handbag film. Create ONE high-resolution vertical 9:16 flat graphic image. A clean uniform warm ivory background, matte, very restrained, no photographed objects, gradients, borders, patterns, illustration or texture. Deep forest-green lettering in a carefully balanced centred typographic arrangement, generous quiet negative space and generous 12 percent safe margins from all edges. Position the complete text group around the vertical centre. Exact text ONLY, verbatim: first line large elegant refined serif uppercase wordmark 'REBAG' (R E B A G spelled exactly); below it in smaller clean highly legible type the tagline 'For the companions' followed on next line by 'who became family.'; leave a generous gap, then the smaller clean call to action 'Message us about pre-orders.' on one line if comfortably readable, or two balanced lines with the exact same words and punctuation. The wordmark is the largest element. Legible English lettering, professional warm respectful premium independent craft brand, forest green about #203C30, ivory about #F7F2E8. Do not add a pictorial logo, paw icon, extra words, quotation marks, watermark, button, URL, price, date, urgency, decorations or testimonial. Accurate lettering is essential. This is one finished title card, not a mockup on a wall or screen.",
+      "file": "05-end-card.png",
+      "reference_images": [],
+      "source_image": "C:/Users/TUSHAR/.codex/generated_images/01a1a749-3688-7862-905d-c329f8ca7fef/exec-5449f99b-fc22-44ea-8a1f-dd0b30e415e1.png"
+    }
+  ]
+}
+
